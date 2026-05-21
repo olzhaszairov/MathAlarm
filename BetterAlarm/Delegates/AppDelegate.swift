@@ -264,7 +264,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             // 알림에서 "스누즈" → 5분 후 재알림
             AppLogger.info("Alarm snoozed via notification action: \(alarmIDString)", category: .alarm)
             await audioService?.stopAlarmSound()
-            await store.snoozeAlarm(alarm, minutes: 5)
+            await store.snoozeAlarm(alarm, minutes: AlarmDefaults.snoozeMinutes)
             await localNotificationService?.cancelAlarm(for: alarm)
 
         default:

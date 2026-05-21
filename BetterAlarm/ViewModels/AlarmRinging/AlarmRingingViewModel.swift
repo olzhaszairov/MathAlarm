@@ -123,11 +123,11 @@ final class AlarmRingingViewModel {
 
     /// 스누즈: 사운드를 중지하고 5분 후 재알림을 예약한다.
     func snoozeAlarm() async {
-        AppLogger.info("Alarm snoozed by user: '\(alarm.displayTitle)' — rescheduling in 5min", category: .alarm)
+        AppLogger.info("Alarm snoozed by user: '\(alarm.displayTitle)' — rescheduling in \(AlarmDefaults.snoozeMinutes)min", category: .alarm)
         isRinging = false
         await volumeService.stopVolumeGuard()
         await audioService.stopAlarmSound()
-        await alarmStore.snoozeAlarm(alarm, minutes: 5)
+        await alarmStore.snoozeAlarm(alarm, minutes: AlarmDefaults.snoozeMinutes)
         onSnoozeHaptic()
         cleanup()
     }

@@ -181,7 +181,7 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         }
 
         let newID = UUID()
-        let snoozeDate = Date().addingTimeInterval(5 * 60)
+        let snoozeDate = Date().addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
 
         let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
 

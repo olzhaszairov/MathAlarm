@@ -48,7 +48,7 @@ final class AlarmStoreSnoozeSkipTests: XCTestCase {
         // MARK: Then
         let snoozed = await sut.alarms.first { $0.id == alarm.id }
         XCTAssertNotNil(snoozed?.snoozeDate, "스누즈 후 snoozeDate가 설정되어야 한다")
-        let expected = before.addingTimeInterval(5 * 60)
+        let expected = before.addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
         XCTAssertEqual(
             snoozed!.snoozeDate!.timeIntervalSince1970,
             expected.timeIntervalSince1970,

@@ -16,7 +16,7 @@ final class AlarmDetailViewModel {
     var selectedWeekdays: Set<Weekday> = []
     var scheduleType: ScheduleType = .once
     var specificDate: Date = Date()
-    var alarmMode: AlarmMode = .local
+    var alarmMode: AlarmMode = AlarmDefaults.defaultAlarmMode
     var isSilentAlarm: Bool = false
     var soundName: String = "default"
 

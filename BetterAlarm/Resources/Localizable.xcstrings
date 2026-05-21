@@ -1,3062 +1,3069 @@
 {
-  "sourceLanguage" : "en",
-  "strings" : {
-    "" : {
-
-    },
-    "%@ (%@)" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "%1$@ (%2$@)"
+  "sourceLanguage": "en",
+  "strings": {
+    "": {},
+    "%@ (%@)": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "%1$@ (%2$@)"
           }
         }
       }
     },
-    "alarm_detail_alarmkit_footer_off" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rings while the app is in the background or foreground."
+    "alarm_detail_alarmkit_footer_off": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rings while the app is in the background or foreground."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱이 백그라운드 또는 포그라운드 상태에서 알람이 울립니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник звонит, когда приложение в фоне или открыто."
           }
         }
       }
     },
-    "alarm_detail_alarmkit_footer_on" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rings even when the app is closed. (Requires iOS 26 or later)"
+    "alarm_detail_alarmkit_footer_on": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rings even when the app is closed. (Requires iOS 26 or later)"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱이 꺼진 상태에서도 알람이 울립니다. (iOS 26 이상 필요)"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник звонит даже при закрытом приложении. (Требуется iOS 26 или новее)"
           }
         }
       }
     },
-    "alarm_detail_alarmkit_toggle_a11y_hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Requires iOS 26 or later"
+    "alarm_detail_alarmkit_toggle_a11y_hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requires iOS 26 or later"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS 26 이상에서만 사용할 수 있습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Требуется iOS 26 или новее"
           }
         }
       }
     },
-    "alarm_detail_alarmkit_toggle_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Ring even when app is closed"
+    "alarm_detail_alarmkit_toggle_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ring even when app is closed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱이 꺼진 상태에서도 알람 받기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звонить при закрытом приложении"
           }
         }
       }
     },
-    "alarm_detail_cancel_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel"
+    "alarm_detail_cancel_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "취소"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отмена"
           }
         }
       }
     },
-    "alarm_detail_date_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select specific date"
+    "alarm_detail_date_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select specific date"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "특정 날짜 선택"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбрать дату"
           }
         }
       }
     },
-    "alarm_detail_date_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date"
+    "alarm_detail_date_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "날짜"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Дата"
           }
         }
       }
     },
-    "alarm_detail_delete_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Delete Alarm"
+    "alarm_detail_delete_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Delete Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 삭제"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удалить будильник"
           }
         }
       }
     },
-    "alarm_detail_deleting" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Deleting…"
+    "alarm_detail_deleting": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Deleting…"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "삭제 중..."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Удаление…"
           }
         }
       }
     },
-    "alarm_detail_earphone_warning" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No headphones connected. Please connect headphones before the alarm rings."
+    "alarm_detail_earphone_warning": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No headphones connected. Please connect headphones before the alarm rings."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이어폰이 연결되어 있지 않습니다. 알람 시각에 이어폰을 연결해주세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Наушники не подключены. Подключите наушники до срабатывания будильника."
           }
         }
       }
     },
-    "alarm_detail_hour_unit_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d"
+    "alarm_detail_hour_unit_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%d시"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%d ч"
           }
         }
       }
     },
-    "alarm_detail_keyboard_done" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Done"
+    "alarm_detail_keyboard_done": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Done"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "완료"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Готово"
           }
         }
       }
     },
-    "alarm_detail_minute_unit_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%02d"
+    "alarm_detail_minute_unit_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%02d"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%02d분"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%02d мин"
           }
         }
       }
     },
-    "alarm_detail_ok_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "OK"
+    "alarm_detail_ok_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "확인"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "OK"
           }
         }
       }
     },
-    "alarm_detail_period_am" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AM"
+    "alarm_detail_period_am": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AM"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오전"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AM"
           }
         }
       }
     },
-    "alarm_detail_period_pm" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "PM"
+    "alarm_detail_period_pm": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PM"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오후"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "PM"
           }
         }
       }
     },
-    "alarm_detail_picker_hour_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select hour"
+    "alarm_detail_picker_hour_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select hour"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "시 선택"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбор часа"
           }
         }
       }
     },
-    "alarm_detail_picker_minute_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select minute"
+    "alarm_detail_picker_minute_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select minute"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "분 선택"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбор минут"
           }
         }
       }
     },
-    "alarm_detail_picker_period_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Select AM or PM"
+    "alarm_detail_picker_period_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Select AM or PM"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오전 오후 선택"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбор AM или PM"
           }
         }
       }
     },
-    "alarm_detail_repeat_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Choose repeat option"
+    "alarm_detail_repeat_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Choose repeat option"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 반복 유형 선택"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выбор повтора"
           }
         }
       }
     },
-    "alarm_detail_repeat_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Repeat"
+    "alarm_detail_repeat_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Repeat"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "반복"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повтор"
           }
         }
       }
     },
-    "alarm_detail_save_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save"
+    "alarm_detail_save_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "저장"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранить"
           }
         }
       }
     },
-    "alarm_detail_save_error_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Save Failed"
+    "alarm_detail_save_error_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Save Failed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "저장 실패"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибка сохранения"
           }
         }
       }
     },
-    "alarm_detail_saving" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Saving…"
+    "alarm_detail_saving": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Saving…"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "저장 중..."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сохранение…"
           }
         }
       }
     },
-    "alarm_detail_schedule_once" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Once"
+    "alarm_detail_schedule_once": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1회"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Один раз"
           }
         }
       }
     },
-    "alarm_detail_schedule_specific_date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Specific Date"
+    "alarm_detail_schedule_specific_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specific Date"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "특정 날짜"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Конкретная дата"
           }
         }
       }
     },
-    "alarm_detail_schedule_weekly" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekly"
+    "alarm_detail_schedule_weekly": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주간 반복"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Еженедельно"
           }
         }
       }
     },
-    "alarm_detail_section_basic" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "General"
+    "alarm_detail_section_basic": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "General"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "기본 설정"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Основные"
           }
         }
       }
     },
-    "alarm_detail_section_mode" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm Mode"
+    "alarm_detail_section_mode": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm Mode"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 모드"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Режим будильника"
           }
         }
       }
     },
-    "alarm_detail_section_sound" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sound"
+    "alarm_detail_section_sound": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "사운드"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук"
           }
         }
       }
     },
-    "alarm_detail_section_sound_output" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sound Output"
+    "alarm_detail_section_sound_output": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound Output"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "소리 출력"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вывод звука"
           }
         }
       }
     },
-    "alarm_detail_section_time" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Time"
+    "alarm_detail_section_time": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Time"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "시간"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Время"
           }
         }
       }
     },
-    "alarm_detail_silent_a11y_hint_alarmkit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not available in AlarmKit mode"
+    "alarm_detail_silent_a11y_hint_alarmkit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not available in AlarmKit mode"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit 모드에서는 사용할 수 없습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Недоступно в режиме AlarmKit"
           }
         }
       }
     },
-    "alarm_detail_silent_a11y_hint_default" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plays only through connected headphones"
+    "alarm_detail_silent_a11y_hint_default": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plays only through connected headphones"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이어폰 연결 시 이어폰으로만 소리가 출력됩니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук только в подключённых наушниках"
           }
         }
       }
     },
-    "alarm_detail_silent_footer_alarmkit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silent alarms are not available in AlarmKit mode."
+    "alarm_detail_silent_footer_alarmkit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silent alarms are not available in AlarmKit mode."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit 모드에서는 조용한 알람을 지원하지 않습니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тихий будильник недоступен в режиме AlarmKit."
           }
         }
       }
     },
-    "alarm_detail_silent_footer_default" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Plays only through connected headphones."
+    "alarm_detail_silent_footer_default": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Plays only through connected headphones."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이어폰 연결 시 이어폰으로만 소리가 출력됩니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Звук только в подключённых наушниках."
           }
         }
       }
     },
-    "alarm_detail_silent_toggle_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silent Alarm"
+    "alarm_detail_silent_toggle_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silent Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "조용한 알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тихий будильник"
           }
         }
       }
     },
-    "alarm_detail_sound_default" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Default"
+    "alarm_detail_sound_default": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Default"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "기본"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "По умолчанию"
           }
         }
       }
     },
-    "alarm_detail_specific_date_unavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Specific-date alarms require iOS 26 or later."
+    "alarm_detail_specific_date_unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Specific-date alarms require iOS 26 or later."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "특정 날짜 알람은 iOS 26 이상에서만 지원됩니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник на дату доступен с iOS 26."
           }
         }
       }
     },
-    "alarm_detail_title_edit" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Edit Alarm"
+    "alarm_detail_title_edit": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Edit Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 편집"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Изменить будильник"
           }
         }
       }
     },
-    "alarm_detail_title_new" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "New Alarm"
+    "alarm_detail_title_new": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "New Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "새 알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Новый будильник"
           }
         }
       }
     },
-    "alarm_detail_title_placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm name"
+    "alarm_detail_title_placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm name"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 제목"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Название будильника"
           }
         }
       }
     },
-    "alarm_detail_weekday_a11y_selected_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ selected"
+    "alarm_detail_weekday_a11y_selected_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ selected"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 선택됨"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ выбрано"
           }
         }
       }
     },
-    "alarm_detail_weekday_a11y_selected_format %@" : {
-      "comment" : "An accessibility label for a weekday button in the alarm detail view. The label indicates whether the weekday is currently selected or not. The placeholder values are replaced with the actual weekday name.",
-      "isCommentAutoGenerated" : true
+    "alarm_detail_weekday_a11y_selected_format %@": {
+      "comment": "An accessibility label for a weekday button in the alarm detail view. The label indicates whether the weekday is currently selected or not. The placeholder values are replaced with the actual weekday name.",
+      "isCommentAutoGenerated": true,
+      "localizations": {}
     },
-    "alarm_detail_weekday_a11y_unselected_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ not selected"
+    "alarm_detail_weekday_a11y_unselected_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ not selected"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%@ 선택 안됨"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%@ не выбрано"
           }
         }
       }
     },
-    "alarm_detail_weekday_a11y_unselected_format %@" : {
-      "comment" : "A label describing a weekday as either \"selected\" or \"unselected\" in the context of an alarm schedule. The argument is the name of the weekday.",
-      "isCommentAutoGenerated" : true
+    "alarm_detail_weekday_a11y_unselected_format %@": {
+      "comment": "A label describing a weekday as either \"selected\" or \"unselected\" in the context of an alarm schedule. The argument is the name of the weekday.",
+      "isCommentAutoGenerated": true,
+      "localizations": {}
     },
-    "alarm_list_add_button_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add new alarm"
+    "alarm_list_add_button_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add new alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "새 알람 추가"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавить будильник"
           }
         }
       }
     },
-    "alarm_list_empty_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No alarms set. Tap + to add your first alarm."
+    "alarm_list_empty_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No alarms set. Tap + to add your first alarm."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정된 알람이 없습니다. + 버튼을 눌러 첫 알람을 추가하세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильников нет. Нажмите +, чтобы добавить первый."
           }
         }
       }
     },
-    "alarm_list_empty_subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tap + to add your first alarm"
+    "alarm_list_empty_subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tap + to add your first alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "+ 버튼을 눌러 첫 알람을 추가하세요"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нажмите +, чтобы добавить первый будильник"
           }
         }
       }
     },
-    "alarm_list_empty_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No alarms set"
+    "alarm_list_empty_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No alarms set"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정된 알람이 없습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильников нет"
           }
         }
       }
     },
-    "alarm_list_next_alarm_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next alarm: %@"
+    "alarm_list_next_alarm_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next alarm: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다음 알람: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следующий будильник: %@"
           }
         }
       }
     },
-    "alarm_list_next_alarm_a11y %@" : {
-      "comment" : "A view displaying the text \"Next alarm\" followed by the time of the next scheduled alarm. The text is followed by a space and then the time.",
-      "isCommentAutoGenerated" : true
+    "alarm_list_next_alarm_a11y %@": {
+      "comment": "A view displaying the text \"Next alarm\" followed by the time of the next scheduled alarm. The text is followed by a space and then the time.",
+      "isCommentAutoGenerated": true,
+      "localizations": {}
     },
-    "alarm_list_next_alarm_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Next alarm"
+    "alarm_list_next_alarm_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Next alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다음 알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следующий будильник"
           }
         }
       }
     },
-    "alarm_list_no_alarm_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No alarm scheduled"
+    "alarm_list_no_alarm_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No alarm scheduled"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 설정되지 않았습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник не установлен"
           }
         }
       }
     },
-    "alarm_list_no_alarm_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not Scheduled"
+    "alarm_list_no_alarm_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not Scheduled"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "예약 안 됨"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не запланировано"
           }
         }
       }
     },
-    "alarm_list_no_alarm_message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No alarm scheduled"
+    "alarm_list_no_alarm_message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No alarm scheduled"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 설정되지 않았습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник не установлен"
           }
         }
       }
     },
-    "alarm_list_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarms"
+    "alarm_list_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarms"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильники"
           }
         }
       }
     },
-    "alarm_ringing_alarm_title_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm name: %@"
+    "alarm_ringing_alarm_title_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm name: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 이름: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Название: %@"
           }
         }
       }
     },
-    "alarm_ringing_alarm_title_a11y %@" : {
-      "comment" : "A label displaying the title of the current alarm.",
-      "isCommentAutoGenerated" : true
+    "alarm_ringing_alarm_title_a11y %@": {
+      "comment": "A label displaying the title of the current alarm.",
+      "isCommentAutoGenerated": true,
+      "localizations": {}
     },
-    "alarm_ringing_current_time_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Current time: %@"
+    "alarm_ringing_current_time_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Current time: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "현재 시각: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Текущее время: %@"
           }
         }
       }
     },
-    "alarm_ringing_current_time_a11y %@" : {
-
+    "alarm_ringing_current_time_a11y %@": {
+      "localizations": {}
     },
-    "alarm_ringing_snooze_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze"
+    "alarm_ringing_math_answer_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Answer"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ответ"
           }
         }
       }
     },
-    "alarm_ringing_snooze_a11y_hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Rings again in 5 minutes"
+    "alarm_ringing_math_answer_placeholder": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your answer"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "5분 후 다시 알람이 울립니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ваш ответ"
           }
         }
       }
     },
-    "alarm_ringing_snooze_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze (5 min)"
+    "alarm_ringing_math_equation_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Solve: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈 (5분)"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Решите: %@"
           }
         }
       }
+    },
+    "alarm_ringing_math_equation_a11y %@": {
+      "comment": "A label that reads out the math equation that the user needs to solve to stop the alarm.",
+      "isCommentAutoGenerated": true,
+      "localizations": {}
     },
-    "alarm_ringing_stop_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop alarm"
+    "alarm_ringing_math_submit_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 정지"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выключить будильник"
           }
         }
       }
     },
-    "alarm_ringing_stop_a11y_hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Enter the correct answer to turn off the alarm"
+    "alarm_ringing_math_wrong": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wrong answer. Try again."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정답을 입력하면 알람이 꺼집니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неверный ответ. Попробуйте снова."
           }
         }
       }
     },
-    "alarm_ringing_stop_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop"
+    "alarm_ringing_snooze_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정지"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложить"
           }
         }
       }
     },
-    "alarm_ringing_math_answer_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Answer"
+    "alarm_ringing_snooze_a11y_hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Rings again in 1 minute"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정답 입력"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Повторный звонок через 1 минуту"
           }
         }
       }
     },
-    "alarm_ringing_math_answer_placeholder" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your answer"
+    "alarm_ringing_snooze_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze (1 min)"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정답 입력"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложить (1 мин)"
           }
         }
       }
     },
-    "alarm_ringing_math_equation_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Solve: %@"
+    "alarm_ringing_stop_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "문제: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выключить будильник"
           }
         }
       }
     },
-    "alarm_ringing_math_submit_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop alarm"
+    "alarm_ringing_stop_a11y_hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Enter the correct answer to turn off the alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 끄기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Введите правильный ответ, чтобы выключить будильник"
           }
         }
       }
     },
-    "alarm_ringing_math_wrong" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wrong answer. Try again."
+    "alarm_ringing_stop_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정답이 아닙니다. 다시 입력하세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стоп"
           }
         }
       }
     },
-    "alarm_row_alarmkit_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit mode"
+    "alarm_row_alarmkit_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AlarmKit mode"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit 모드"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Режим AlarmKit"
           }
         }
       }
     },
-    "alarm_row_silent_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Silent alarm"
+    "alarm_row_silent_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Silent alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "조용한 알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Тихий будильник"
           }
         }
       }
     },
-    "alarm_row_skipping_next" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skipping next"
+    "alarm_row_skipping_next": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skipping next"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다음 1회 건너뜀"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропуск следующего"
           }
         }
       }
     },
-    "alarm_row_snoozed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snoozed"
+    "alarm_row_snoozed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snoozed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈 중"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложен"
           }
         }
       }
     },
-    "alarm_row_swipe_clear_skip" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cancel Skip"
+    "alarm_row_swipe_clear_skip": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cancel Skip"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "건너뛰기 취소"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отменить пропуск"
           }
         }
       }
     },
-    "alarm_row_swipe_skip_once" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skip Once"
+    "alarm_row_swipe_skip_once": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip Once"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1회 건너뛰기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропустить один раз"
           }
         }
       }
     },
-    "alarm_row_time_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm time: %@"
+    "alarm_row_time_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm time: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 시각: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Время будильника: %@"
           }
         }
       }
     },
-    "alarm_row_time_a11y %@" : {
-
+    "alarm_row_time_a11y %@": {
+      "localizations": {}
     },
-    "alarm_row_toggle_a11y_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ alarm %2$@"
+    "alarm_row_toggle_a11y_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ alarm %2$@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ 알람 %2$@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник %1$@ %2$@"
           }
         }
       }
     },
-    "alarm_row_toggle_a11y_format %@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "alarm_row_toggle_a11y_format %1$@ %2$@"
+    "alarm_row_toggle_a11y_format %@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "alarm_row_toggle_a11y_format %1$@ %2$@"
           }
         }
       }
     },
-    "alarm_row_toggle_disable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "disable"
+    "alarm_row_toggle_disable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "disable"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "비활성화"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "выключить"
           }
         }
       }
     },
-    "alarm_row_toggle_enable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "enable"
+    "alarm_row_toggle_enable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "enable"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "활성화"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "включить"
           }
         }
       }
     },
-    "alarmkit_alert_snooze_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze Alarm"
+    "alarmkit_alert_snooze_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈 알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложенный будильник"
           }
         }
       }
     },
-    "alarmkit_button_snooze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze"
+    "alarmkit_button_open": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open app"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть приложение"
           }
         }
       }
     },
-    "alarmkit_button_open" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open app"
+    "alarmkit_button_snooze": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱 열기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложить"
           }
         }
       }
     },
-    "alarmkit_button_stop" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop"
+    "alarmkit_button_stop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정지"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стоп"
           }
         }
       }
     },
-    "alarmmode_alarmkit_display" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit (rings even when closed)"
+    "alarmmode_alarmkit_display": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AlarmKit (rings even when closed)"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit (앱 꺼진 상태에서도 울림)"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AlarmKit (звонит при закрытом приложении)"
           }
         }
       }
     },
-    "alarmmode_local_display" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Local Notification"
+    "alarmmode_local_display": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Local Notification"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "로컬 알림"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Локальное уведомление"
           }
         }
       }
     },
-    "common_alarm_default_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm"
+    "common_alarm_default_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник"
           }
         }
       }
     },
-    "common_loading" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Loading…"
+    "common_loading": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Loading…"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "로딩 중..."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Загрузка…"
           }
         }
       }
     },
-    "error_alarmkit_unavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This feature requires iOS 26 or later."
+    "error_alarmkit_unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This feature requires iOS 26 or later."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이 기능은 iOS 26 이상에서만 사용할 수 있습니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эта функция доступна с iOS 26."
           }
         }
       }
     },
-    "error_compute_trigger_failed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Failed to compute next trigger time"
+    "error_compute_trigger_failed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Failed to compute next trigger time"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다음 발생 시각 계산 실패"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось вычислить время срабатывания"
           }
         }
       }
     },
-    "error_date_conversion_failed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Date conversion failed"
+    "error_date_conversion_failed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Date conversion failed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "날짜 변환 실패"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ошибка преобразования даты"
           }
         }
       }
     },
-    "error_earphone_not_connected" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Please connect headphones to use Silent Alarm."
+    "error_earphone_not_connected": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Please connect headphones to use Silent Alarm."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "조용한 알람을 사용하려면 이어폰을 연결해주세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Подключите наушники для тихого будильника."
           }
         }
       }
     },
-    "error_next_trigger_unavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unable to compute next trigger time."
+    "error_next_trigger_unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unable to compute next trigger time."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다음 발생 시각을 계산할 수 없습니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось вычислить время срабатывания."
           }
         }
       }
     },
-    "error_not_authorized" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notification permission is required. Please enable it in Settings."
+    "error_not_authorized": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification permission is required. Please enable it in Settings."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람을 사용하려면 알림 권한이 필요합니다. 설정에서 권한을 허용해주세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нужно разрешение на уведомления. Включите его в Настройках."
           }
         }
       }
     },
-    "error_past_date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cannot schedule an alarm on a past date."
+    "error_past_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot schedule an alarm on a past date."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "과거 날짜로는 알람을 설정할 수 없습니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нельзя установить будильник на прошедшую дату."
           }
         }
       }
     },
-    "error_past_time" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Cannot schedule an alarm in the past."
+    "error_past_time": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Cannot schedule an alarm in the past."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "과거 시각으로는 알람을 설정할 수 없습니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нельзя установить будильник на прошедшее время."
           }
         }
       }
     },
-    "error_schedule_failed_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Failed to schedule alarm: %@"
+    "error_schedule_failed_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Failed to schedule alarm: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 등록에 실패했습니다: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не удалось запланировать будильник: %@"
           }
         }
       }
     },
-    "error_sound_not_found_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sound file not found: %@"
+    "error_sound_not_found_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sound file not found: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "사운드 파일을 찾을 수 없습니다: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Файл звука не найден: %@"
           }
         }
       }
     },
-    "intent_alarmid_param" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm ID"
+    "intent_alarmid_param": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm ID"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 ID"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "ID будильника"
           }
         }
       }
     },
-    "intent_snooze_description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snoozes the alarm."
+    "intent_open_description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Opens the app to solve a math problem and stop the alarm."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람을 스누즈합니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открывает приложение для решения примера и выключения будильника."
           }
         }
       }
     },
-    "intent_snooze_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze"
+    "intent_open_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open App"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть приложение"
           }
         }
       }
     },
-    "intent_open_description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Opens the app to solve a math problem and stop the alarm."
+    "intent_snooze_description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snoozes the alarm."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱을 열어 수학 문제를 풀고 알람을 끕니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Откладывает будильник."
           }
         }
       }
     },
-    "intent_open_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open App"
+    "intent_snooze_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱 열기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложить"
           }
         }
       }
     },
-    "intent_stop_description" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stops the alarm."
+    "intent_stop_description": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stops the alarm."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람을 정지합니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выключает будильник."
           }
         }
       }
     },
-    "intent_stop_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop Alarm"
+    "intent_stop_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop Alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 정지"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выключить будильник"
           }
         }
       }
     },
-    "live_activity_no_alarm_date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No alarm set"
+    "live_activity_no_alarm_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No alarm set"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정된 알람 없음"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник не установлен"
           }
         }
       }
     },
-    "live_activity_no_alarm_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add an alarm"
+    "live_activity_no_alarm_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add an alarm"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람을 추가해주세요"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавьте будильник"
           }
         }
       }
     },
-    "next_alarm_format_date" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$@"
+    "next_alarm_format_date": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "%1$@ %2$@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "%1$@ %2$@"
           }
         }
       }
     },
-    "next_alarm_format_today" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Today %@"
+    "next_alarm_format_today": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Today %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "오늘 %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сегодня %@"
           }
         }
       }
     },
-    "next_alarm_format_tomorrow" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tomorrow %@"
+    "next_alarm_format_tomorrow": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tomorrow %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "내일 %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Завтра %@"
           }
         }
       }
     },
-    "notif_action_snooze_5min" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze (5 min)"
+    "notif_action_open_app": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open app"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈 (5분)"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть приложение"
           }
         }
       }
     },
-    "notif_action_open_app" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open app"
+    "notif_action_snooze_5min": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze (1 min)"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱 열기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отложить (1 мин)"
           }
         }
       }
     },
-    "notif_action_stop" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Stop"
+    "notif_action_stop": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Stop"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "정지"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Стоп"
           }
         }
       }
     },
-    "notif_alarm_body_default" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your alarm is ringing."
+    "notif_alarm_body_default": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your alarm is ringing."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 울립니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сработал будильник."
           }
         }
       }
     },
-    "notif_alarm_body_repeating" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Your alarm is still ringing. Open the app to turn it off."
+    "notif_alarm_body_repeating": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Your alarm is still ringing. Open the app to turn it off."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 울리고 있습니다. 앱을 열어 알람을 끄세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник всё ещё звонит. Откройте приложение, чтобы выключить."
           }
         }
       }
     },
-    "notif_alarm_body_snooze" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Snooze alarm is ringing."
+    "notif_alarm_body_snooze": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Snooze alarm is ringing."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "스누즈 알람이 울립니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сработал отложенный будильник."
           }
         }
       }
     },
-    "notif_background_reminder_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm scheduled for %@."
+    "notif_background_reminder_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm scheduled for %@."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 설정되어 있습니다. 알람 시각: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник установлен на %@."
           }
         }
       }
     },
-    "notif_termination_warning_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarms may not ring while the app is closed. Next alarm: %@"
+    "notif_termination_warning_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarms may not ring while the app is closed. Next alarm: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱이 종료되면 알람이 울리지 않을 수 있습니다. 다시 열어 주세요. 다음 알람: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "При закрытом приложении будильник может не сработать. Следующий: %@"
           }
         }
       }
     },
-    "notif_termination_warning_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⚠️ App is closed"
+    "notif_termination_warning_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⚠️ App is closed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "⚠️ 앱이 종료됨"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "⚠️ Приложение закрыто"
           }
         }
       }
     },
-    "NSAlarmKitUsageDescription" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This app needs permission to schedule alarms."
+    "NSAlarmKitUsageDescription": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This app needs permission to schedule alarms."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람을 설정하기 위해 권한이 필요합니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Приложению нужно разрешение для установки будильников."
           }
         }
       }
     },
-    "repeat_every_day" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Every day"
+    "repeat_every_day": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Every day"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "매일"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Каждый день"
           }
         }
       }
     },
-    "repeat_once" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Once"
+    "repeat_once": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Once"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "1회"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Один раз"
           }
         }
       }
     },
-    "repeat_weekdays" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekdays"
+    "repeat_weekdays": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekdays"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주중"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будни"
           }
         }
       }
     },
-    "repeat_weekend" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekends"
+    "repeat_weekend": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekends"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주말"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выходные"
           }
         }
       }
     },
-    "settings_alarmkit_permission" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit"
+    "settings_alarmkit_permission": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AlarmKit"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit 권한"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AlarmKit"
           }
         }
       }
     },
-    "settings_alarmkit_permission_a11y_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit permission: %@"
+    "settings_alarmkit_permission_a11y_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "AlarmKit permission: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "AlarmKit 권한: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение AlarmKit: %@"
           }
         }
       }
     },
-    "settings_alarmkit_permission_a11y_format %@" : {
-
+    "settings_alarmkit_permission_a11y_format %@": {
+      "localizations": {}
     },
-    "settings_feedback_a11y_hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sends feedback by email"
+    "settings_feedback_a11y_hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sends feedback by email"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이메일로 피드백을 보냅니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправить отзыв по email"
           }
         }
       }
     },
-    "settings_feedback_button" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Send Feedback"
+    "settings_feedback_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Send Feedback"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "피드백 보내기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Отправить отзыв"
           }
         }
       }
     },
-    "settings_feedback_email_subject" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BetterAlarm Feedback"
+    "settings_feedback_email_subject": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "BetterAlarm Feedback"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "BetterAlarm 피드백"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "turgyzar — отзыв"
           }
         }
       }
     },
-    "settings_loading_message" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checking permissions…"
+    "settings_loading_message": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checking permissions…"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "권한 확인 중..."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка разрешений…"
           }
         }
       }
     },
-    "settings_lock_widget_a11y_hint" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Shows next alarm info on the Lock Screen via Live Activity"
+    "settings_lock_widget_a11y_hint": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Shows next alarm info on the Lock Screen via Live Activity"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Live Activity를 통해 잠금화면에 다음 알람 정보를 표시합니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Показывает следующий будильник на экране блокировки через Live Activity"
           }
         }
       }
     },
-    "settings_lock_widget_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock Screen Widget"
+    "settings_lock_widget_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock Screen Widget"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "잠금화면 위젯"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виджет экрана блокировки"
           }
         }
       }
     },
-    "settings_lock_widget_permission" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Widget permission"
+    "settings_lock_widget_permission": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Widget permission"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "잠금화면 위젯 권한"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение виджета"
           }
         }
       }
     },
-    "settings_lock_widget_permission_a11y_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock Screen Widget permission: %@"
+    "settings_lock_widget_permission_a11y_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock Screen Widget permission: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "잠금화면 위젯 권한: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение виджета: %@"
           }
         }
       }
     },
-    "settings_lock_widget_permission_a11y_format %@" : {
-
+    "settings_lock_widget_permission_a11y_format %@": {
+      "localizations": {}
     },
-    "settings_notification_permission" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notifications"
+    "settings_notification_permission": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notifications"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알림 권한"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Уведомления"
           }
         }
       }
     },
-    "settings_notification_permission_a11y_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Notification permission: %@"
+    "settings_notification_permission_a11y_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Notification permission: %@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알림 권한: %@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешение уведомлений: %@"
           }
         }
       }
     },
-    "settings_notification_permission_a11y_format %@" : {
-
+    "settings_notification_permission_a11y_format %@": {
+      "localizations": {}
     },
-    "settings_open_app_settings" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Open Settings"
+    "settings_open_app_settings": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Open Settings"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정 열기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Открыть настройки"
           }
         }
       }
     },
-    "settings_permission_authorized" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Allowed"
+    "settings_permission_authorized": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allowed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "허용됨"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешено"
           }
         }
       }
     },
-    "settings_permission_denied" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not allowed"
+    "settings_permission_denied": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not allowed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "허용 안 됨"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Запрещено"
           }
         }
       }
     },
-    "settings_permission_loading" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Checking…"
+    "settings_permission_loading": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Checking…"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "확인 중..."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Проверка…"
           }
         }
       }
     },
-    "settings_permission_not_determined" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Not set"
+    "settings_permission_not_determined": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Not set"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "미설정"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Не задано"
           }
         }
       }
     },
-    "settings_permission_unknown" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Unknown"
+    "settings_permission_unknown": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Unknown"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알 수 없음"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неизвестно"
           }
         }
       }
     },
-    "settings_requires_ios17" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Requires iOS 17+"
+    "settings_requires_ios17": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requires iOS 17+"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS 17 이상 필요"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Требуется iOS 17+"
           }
         }
       }
     },
-    "settings_requires_ios26" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Requires iOS 26+"
+    "settings_requires_ios26": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Requires iOS 26+"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "iOS 26 이상 필요"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Требуется iOS 26+"
           }
         }
       }
     },
-    "settings_section_app_info" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "About"
+    "settings_section_app_info": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "About"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱 정보"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "О приложении"
           }
         }
       }
     },
-    "settings_section_feedback" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Feedback"
+    "settings_section_feedback": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Feedback"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "피드백/문의"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Обратная связь"
           }
         }
       }
     },
-    "settings_section_lock_widget" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Lock Screen Widget"
+    "settings_section_lock_widget": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Lock Screen Widget"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "잠금화면 위젯"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Виджет экрана блокировки"
           }
         }
       }
     },
-    "settings_section_permission" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Permissions"
+    "settings_section_permission": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Permissions"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "권한"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешения"
           }
         }
       }
     },
-    "settings_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
+    "settings_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки"
           }
         }
       }
     },
-    "settings_version_a11y_format" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "App version %1$@, build %2$@"
+    "settings_version_a11y_format": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "App version %1$@, build %2$@"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "앱 버전 %1$@, 빌드 %2$@"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версия %1$@, сборка %2$@"
           }
         }
       }
     },
-    "settings_version_a11y_format %@ %@" : {
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "new",
-            "value" : "settings_version_a11y_format %1$@ %2$@"
+    "settings_version_a11y_format %@ %@": {
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "new",
+            "value": "settings_version_a11y_format %1$@ %2$@"
           }
         }
       }
     },
-    "settings_version_label" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Version"
+    "settings_version_label": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Version"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "버전"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Версия"
           }
         }
       }
     },
-    "tab_alarm_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarms tab"
+    "tab_alarm_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarms tab"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 목록 탭"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вкладка будильников"
           }
         }
       }
     },
-    "tab_alarm_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarms"
+    "tab_alarm_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarms"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильники"
           }
         }
       }
     },
-    "tab_settings_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings tab"
+    "tab_settings_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings tab"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정 탭"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вкладка настроек"
           }
         }
       }
     },
-    "tab_settings_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Settings"
+    "tab_settings_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Settings"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "설정"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Настройки"
           }
         }
       }
     },
-    "tab_weekly_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekly alarms tab"
+    "tab_weekly_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly alarms tab"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주간 알람 탭"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вкладка еженедельных"
           }
         }
       }
     },
-    "tab_weekly_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekly"
+    "tab_weekly_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주간"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Неделя"
           }
         }
       }
     },
-    "toast_alarm_deleted" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm deleted"
+    "toast_alarm_deleted": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm deleted"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 삭제되었습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник удалён"
           }
         }
       }
     },
-    "toast_alarm_disabled" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm turned off"
+    "toast_alarm_disabled": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm turned off"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 꺼졌습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник выключен"
           }
         }
       }
     },
-    "toast_alarm_enabled" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm turned on"
+    "toast_alarm_enabled": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm turned on"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 켜졌습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник включён"
           }
         }
       }
     },
-    "toast_alarm_saved" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm saved"
+    "toast_alarm_saved": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm saved"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 저장되었습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник сохранён"
           }
         }
       }
     },
-    "toast_alarm_updated" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Alarm updated"
+    "toast_alarm_updated": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Alarm updated"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람이 수정되었습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Будильник обновлён"
           }
         }
       }
     },
-    "toast_alarmkit_unavailable" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "This feature requires iOS 26 or later."
+    "toast_alarmkit_unavailable": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "This feature requires iOS 26 or later."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이 기능은 iOS 26 이상에서만 사용할 수 있습니다."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Эта функция доступна с iOS 26."
           }
         }
       }
     },
-    "toast_skip_cleared" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skip cancelled"
+    "toast_skip_cleared": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip cancelled"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "건너뛰기가 취소되었습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропуск отменён"
           }
         }
       }
     },
-    "toast_skip_next_once" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skipping next occurrence"
+    "toast_skip_next_once": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skipping next occurrence"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "다음 1회 건너뜁니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Следующий раз пропущен"
           }
         }
       }
     },
-    "weekday_short_fri" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Fri"
+    "weekday_short_fri": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Fri"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "금"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пт"
           }
         }
       }
     },
-    "weekday_short_mon" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Mon"
+    "weekday_short_mon": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Mon"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "월"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пн"
           }
         }
       }
     },
-    "weekday_short_sat" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sat"
+    "weekday_short_sat": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sat"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "토"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Сб"
           }
         }
       }
     },
-    "weekday_short_sun" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Sun"
+    "weekday_short_sun": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Sun"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "일"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вс"
           }
         }
       }
     },
-    "weekday_short_thu" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Thu"
+    "weekday_short_thu": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Thu"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "목"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Чт"
           }
         }
       }
     },
-    "weekday_short_tue" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Tue"
+    "weekday_short_tue": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Tue"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "화"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Вт"
           }
         }
       }
     },
-    "weekday_short_wed" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Wed"
+    "weekday_short_wed": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Wed"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "수"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Ср"
           }
         }
       }
     },
-    "weekly_disable_action_disable_full" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Turn Off"
+    "weekly_disable_action_disable_full": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Turn Off"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "완전히 끄기"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Выключить"
           }
         }
       }
     },
-    "weekly_disable_action_skip_once" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Skip Once"
+    "weekly_disable_action_skip_once": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Skip Once"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이번만 스킵"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Пропустить один раз"
           }
         }
       }
     },
-    "weekly_disable_action_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "What would you like to do with this alarm?"
+    "weekly_disable_action_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "What would you like to do with this alarm?"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "이 주간 알람을 어떻게 처리할까요?"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Что сделать с этим будильником?"
           }
         }
       }
     },
-    "weekly_empty_a11y" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No weekly alarms. Add one from the Alarms tab."
+    "weekly_empty_a11y": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No weekly alarms. Add one from the Alarms tab."
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주간 반복 알람이 없습니다. 알람 탭에서 주간 반복 알람을 추가하세요."
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет еженедельных будильников. Добавьте на вкладке «Будильники»."
           }
         }
       }
     },
-    "weekly_empty_subtitle" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Add a weekly alarm from the Alarms tab"
+    "weekly_empty_subtitle": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Add a weekly alarm from the Alarms tab"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "알람 탭에서 주간 반복 알람을 추가하세요"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Добавьте еженедельный будильник на вкладке «Будильники»"
           }
         }
       }
     },
-    "weekly_empty_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "No weekly alarms"
+    "weekly_empty_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "No weekly alarms"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주간 반복 알람이 없습니다"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Нет еженедельных будильников"
           }
         }
       }
     },
-    "weekly_title" : {
-      "extractionState" : "manual",
-      "localizations" : {
-        "en" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "Weekly Alarms"
+    "weekly_title": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Weekly Alarms"
           }
         },
-        "ko" : {
-          "stringUnit" : {
-            "state" : "translated",
-            "value" : "주간 알람"
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Еженедельные будильники"
           }
         }
       }
     }
   },
-  "version" : "1.1"
+  "version": "1.1"
 }

@@ -36,7 +36,7 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
 
         // 5분 후 스누즈 알람을 AlarmManager.shared로 직접 등록
         let newID = UUID()
-        let snoozeDate = Date().addingTimeInterval(5 * 60)
+        let snoozeDate = Date().addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
 
         let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
 

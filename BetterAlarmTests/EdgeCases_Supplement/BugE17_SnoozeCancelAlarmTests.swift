@@ -112,8 +112,8 @@ final class BugE17_SnoozeCancelAlarmTests: XCTestCase {
         XCTAssertNotNil(snoozeDate, "E17: snoozeAlarm 후 snoozeDate가 설정되어야 한다")
 
         if let date = snoozeDate {
-            let expectedMin = beforeSnooze.addingTimeInterval(5 * 60)
-            let expectedMax = afterSnooze.addingTimeInterval(5 * 60)
+            let expectedMin = beforeSnooze.addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
+            let expectedMax = afterSnooze.addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
             XCTAssertGreaterThanOrEqual(date, expectedMin,
                                         "E17: snoozeDate는 5분 후 이상이어야 한다")
             XCTAssertLessThanOrEqual(date, expectedMax,

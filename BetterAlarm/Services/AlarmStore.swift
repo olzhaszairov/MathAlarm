@@ -72,7 +72,7 @@ actor AlarmStore {
         title: String,
         schedule: AlarmSchedule,
         soundName: String = "default",
-        alarmMode: AlarmMode = .local,
+        alarmMode: AlarmMode = AlarmDefaults.defaultAlarmMode,
         isSilentAlarm: Bool = false
     ) async {
         let alarm = Alarm(
@@ -220,7 +220,7 @@ actor AlarmStore {
     }
 
     /// 알람을 지정된 분 뒤에 다시 울리도록 스누즈 알림을 예약한다.
-    func snoozeAlarm(_ alarm: Alarm, minutes: Int = 5) async {
+    func snoozeAlarm(_ alarm: Alarm, minutes: Int = AlarmDefaults.snoozeMinutes) async {
         // 스누즈 상태 저장
         if let index = alarms.firstIndex(where: { $0.id == alarm.id }) {
             var updated = alarms[index]
