@@ -18,6 +18,7 @@ final class WeeklyAlarmViewModel: AlarmToggleHandling {
     var showToast: Bool = false
     var toastMessage: String = ""
     var pendingDisableAlarm: Alarm? = nil
+    var mathToggleGate = MathToggleGate()
     var togglingAlarmID: UUID? = nil
 
     // MARK: - Computed

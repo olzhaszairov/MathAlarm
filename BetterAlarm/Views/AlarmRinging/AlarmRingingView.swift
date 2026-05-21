@@ -110,19 +110,59 @@ struct AlarmRingingView: View {
     }
 
     private func mathStopSection(vm: AlarmRingingViewModel) -> some View {
+        MathStopChallengeView(
+            challenge: vm.mathChallenge,
+            answerInput: Binding(
+                get: { vm.stopAnswerInput },
+                set: { vm.stopAnswerInput = $0 }
+            ),
+            showError: vm.stopAnswerError,
+            onClearError: { vm.clearStopAnswerError() },
+            submitButtonTitle: "alarm_ringing_math_submit_button",
+            submitAccessibilityLabel: "alarm_ringing_stop_a11y",
+            submitAccessibilityHint: "alarm_ringing_stop_a11y_hint",
+            onSubmit: {
+                Task {
+                    if await vm.submitStopAnswer() {
+                        dismiss()
+                    } else {
+                        HapticManager.notification(.error)
+                    }
+                }
+            }
+        )
+    }
+}
+
+// MARK: - MathStopChallengeView
+
+/// Общий UI: уравнение + поле ответа + кнопка (экран звонка и выключение в списке).
+struct MathStopChallengeView: View {
+    let challenge: MathStopChallenge
+    @Binding var answerInput: String
+    let showError: Bool
+    let onClearError: () -> Void
+    let submitButtonTitle: LocalizedStringKey
+    var submitAccessibilityLabel: LocalizedStringKey?
+    var submitAccessibilityHint: LocalizedStringKey?
+    let onSubmit: () -> Void
+
+    @Environment(\.pThemeColors) private var theme
+
+    var body: some View {
         VStack(spacing: 16) {
-            Text(vm.mathChallenge.equationText)
+            Text(challenge.equationText)
                 .font(.system(size: 44, weight: .semibold, design: .rounded))
                 .foregroundStyle(Color.pTextPrimary)
                 .accessibilityLabel(
-                    Text("alarm_ringing_math_equation_a11y \(vm.mathChallenge.equationText)")
+                    Text("alarm_ringing_math_equation_a11y \(challenge.equationText)")
                 )
 
             TextField("alarm_ringing_math_answer_placeholder", text: Binding(
-                get: { vm.stopAnswerInput },
+                get: { answerInput },
                 set: { newValue in
-                    vm.stopAnswerInput = String(newValue.filter(\.isNumber))
-                    vm.clearStopAnswerError()
+                    answerInput = String(newValue.filter(\.isNumber))
+                    onClearError()
                 }
             ))
             .keyboardType(.numberPad)
@@ -135,30 +175,89 @@ struct AlarmRingingView: View {
             .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
             .accessibilityLabel(Text("alarm_ringing_math_answer_a11y"))
 
-            if vm.stopAnswerError {
+            if showError {
                 Text("alarm_ringing_math_wrong")
                     .font(.subheadline.weight(.medium))
                     .foregroundStyle(Color.pAccentPrimary)
             }
 
-            Button {
-                Task {
-                    if await vm.submitStopAnswer() {
-                        dismiss()
-                    }
+            Group {
+                if let submitAccessibilityLabel, let submitAccessibilityHint {
+                    Button(action: onSubmit) { submitButtonLabel }
+                        .accessibilityLabel(Text(submitAccessibilityLabel))
+                        .accessibilityHint(Text(submitAccessibilityHint))
+                } else {
+                    Button(action: onSubmit) { submitButtonLabel }
                 }
-            } label: {
-                Text("alarm_ringing_math_submit_button")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(.white)
-                    .frame(maxWidth: .infinity)
-                    .frame(height: 56)
-                    .background(theme.accentPrimary)
-                    .clipShape(Capsule())
             }
-            .accessibilityLabel(Text("alarm_ringing_stop_a11y"))
-            .accessibilityHint(Text("alarm_ringing_stop_a11y_hint"))
         }
         .frame(maxWidth: 320)
+    }
+
+    private var submitButtonLabel: some View {
+        Text(submitButtonTitle)
+            .font(.title3.weight(.semibold))
+            .foregroundStyle(.white)
+            .frame(maxWidth: .infinity)
+            .frame(height: 56)
+            .background(theme.accentPrimary)
+            .clipShape(Capsule())
+    }
+}
+
+// MARK: - Math toggle sheet
+
+extension View {
+    func mathToggleGateSheet(
+        gate: Binding<MathToggleGate>,
+        onSubmit: @escaping () async -> Bool,
+        onCancel: @escaping () -> Void
+    ) -> some View {
+        sheet(item: Binding(
+            get: { gate.wrappedValue.pendingAlarm },
+            set: { if $0 == nil { onCancel() } }
+        )) { alarm in
+            ZStack {
+                PGradientBackground()
+                VStack(spacing: 24) {
+                    Text("alarm_toggle_math_title \(alarm.displayTitle)")
+                        .font(.headline.weight(.semibold))
+                        .foregroundStyle(Color.pTextPrimary)
+                        .multilineTextAlignment(.center)
+                        .padding(.horizontal, 24)
+
+                    MathStopChallengeView(
+                        challenge: gate.wrappedValue.challenge,
+                        answerInput: Binding(
+                            get: { gate.wrappedValue.answerInput },
+                            set: { gate.wrappedValue.answerInput = $0 }
+                        ),
+                        showError: gate.wrappedValue.answerError,
+                        onClearError: { gate.wrappedValue.answerError = false },
+                        submitButtonTitle: "alarm_toggle_math_submit_button",
+                        onSubmit: {
+                            Task {
+                                let ok = await onSubmit()
+                                if !ok {
+                                    HapticManager.notification(.error)
+                                } else {
+                                    HapticManager.notification(.success)
+                                }
+                            }
+                        }
+                    )
+
+                    Button("alarm_toggle_math_cancel_button", role: .cancel) {
+                        onCancel()
+                    }
+                    .font(.body.weight(.medium))
+                    .foregroundStyle(Color.pTextSecondary)
+                }
+                .padding(.vertical, 32)
+                .padding(.horizontal, 24)
+            }
+            .presentationDetents([.medium])
+            .presentationDragIndicator(.visible)
+        }
     }
 }

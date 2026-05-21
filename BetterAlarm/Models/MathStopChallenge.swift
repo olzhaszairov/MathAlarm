@@ -44,3 +44,28 @@ struct MathStopChallenge: Sendable, Equatable {
         return MathStopChallenge(left: left, right: right, operation: .subtract)
     }
 }
+
+// MARK: - MathToggleGate
+
+/// Состояние мат. задачи перед выключением будильника переключателем в списке.
+struct MathToggleGate: Equatable {
+    var pendingAlarm: Alarm?
+    var challenge: MathStopChallenge = .random()
+    var answerInput: String = ""
+    var answerError: Bool = false
+
+    var isPresented: Bool { pendingAlarm != nil }
+
+    mutating func present(for alarm: Alarm) {
+        pendingAlarm = alarm
+        challenge = .random()
+        answerInput = ""
+        answerError = false
+    }
+
+    mutating func dismiss() {
+        pendingAlarm = nil
+        answerInput = ""
+        answerError = false
+    }
+}

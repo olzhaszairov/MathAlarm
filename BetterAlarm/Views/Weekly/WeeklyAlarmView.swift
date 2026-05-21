@@ -19,6 +19,8 @@ struct WeeklyAlarmView: View {
     }
 
     var body: some View {
+        @Bindable var viewModel = viewModel
+
         ZStack {
             PGradientBackground()
 
@@ -62,6 +64,11 @@ struct WeeklyAlarmView: View {
             ),
             message: viewModel.toastMessage,
             type: .info
+        )
+        .mathToggleGateSheet(
+            gate: $viewModel.mathToggleGate,
+            onSubmit: { await viewModel.submitMathToggleAnswer() },
+            onCancel: { viewModel.cancelMathToggle() }
         )
         .pActionSheet(
             isPresented: Binding(

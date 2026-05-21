@@ -9,6 +9,7 @@ protocol AlarmToggleHandling: AnyObject {
     var showToast: Bool { get set }
     var toastMessage: String { get set }
     var pendingDisableAlarm: Alarm? { get set }
+    var mathToggleGate: MathToggleGate { get set }
     var togglingAlarmID: UUID? { get set }
     var alarmToggleStore: AlarmStore { get }
 
@@ -43,8 +44,32 @@ extension AlarmToggleHandling {
                 requestToggle(alarm, enabled: true)
             }
         } else {
-            requestToggle(alarm, enabled: false)
+            mathToggleGate.present(for: alarm)
         }
+    }
+
+    func cancelMathToggle() {
+        mathToggleGate.dismiss()
+    }
+
+    /// Проверяет ответ; при успехе выключает будильник (для weekly — затем action sheet).
+    @discardableResult
+    func submitMathToggleAnswer() async -> Bool {
+        guard let alarm = mathToggleGate.pendingAlarm else { return false }
+
+        guard let answer = Int(mathToggleGate.answerInput.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+            mathToggleGate.answerError = true
+            return false
+        }
+
+        guard mathToggleGate.challenge.isCorrect(answer) else {
+            mathToggleGate.answerError = true
+            return false
+        }
+
+        mathToggleGate.dismiss()
+        requestToggle(alarm, enabled: false)
+        return true
     }
 
     /// 알람 활성화/비활성화 토글
@@ -130,6 +155,7 @@ final class AlarmListViewModel: AlarmToggleHandling {
     var showToast: Bool = false
     var toastMessage: String = ""
     var pendingDisableAlarm: Alarm? = nil
+    var mathToggleGate = MathToggleGate()
     var togglingAlarmID: UUID? = nil
 
     // MARK: - Dependencies
