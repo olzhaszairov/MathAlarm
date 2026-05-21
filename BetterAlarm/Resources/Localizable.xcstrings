@@ -3063,6 +3063,23 @@
           }
         }
       }
+    },
+    "settings_permission_allow_button": {
+      "extractionState": "manual",
+      "localizations": {
+        "en": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Allow"
+          }
+        },
+        "ru": {
+          "stringUnit": {
+            "state": "translated",
+            "value": "Разрешить"
+          }
+        }
+      }
     }
   },
   "version": "1.1"

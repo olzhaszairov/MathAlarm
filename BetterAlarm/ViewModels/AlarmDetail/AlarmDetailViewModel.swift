@@ -217,6 +217,13 @@ final class AlarmDetailViewModel {
         defer { isSaving = false }
         saveError = nil
 
+        let permissionsOK = await store.ensureSchedulingPermissions(for: alarmMode)
+        guard permissionsOK else {
+            saveError = String(localized: "error_not_authorized")
+            AppLogger.warning("Save blocked — scheduling permission denied for mode \(alarmMode)", category: .permission)
+            return
+        }
+
         let schedule = buildSchedule()
 
         if let alarm = editingAlarm {

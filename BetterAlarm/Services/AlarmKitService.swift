@@ -10,6 +10,7 @@ protocol AlarmKitServiceProtocol: Sendable {
     func requestPermission() async -> Bool
     /// 권한을 요청하지 않고 현재 상태만 확인한다.
     func checkPermission() async -> Bool
+    func permissionState() async -> PermissionAuthState
     func scheduleAlarm(for alarm: Alarm) async throws
     func cancelAlarm(for alarm: Alarm) async
     func stopAllAlarms() async
@@ -44,9 +45,20 @@ actor AlarmKitService: AlarmKitServiceProtocol {
 
     /// 권한을 요청하지 않고 현재 상태만 확인한다.
     func checkPermission() async -> Bool {
-        let authorized = manager.authorizationState == .authorized
-        AppLogger.debug("AlarmKit permission check → \(authorized ? "authorized" : "not authorized")", category: .permission)
-        return authorized
+        await permissionState() == .authorized
+    }
+
+    func permissionState() async -> PermissionAuthState {
+        switch manager.authorizationState {
+        case .authorized:
+            return .authorized
+        case .notDetermined:
+            return .notDetermined
+        case .denied:
+            return .denied
+        @unknown default:
+            return .denied
+        }
     }
 
     // MARK: - Schedule

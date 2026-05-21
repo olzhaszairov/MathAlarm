@@ -35,6 +35,10 @@ final class MockAlarmKitService: AlarmKitServiceProtocol, @unchecked Sendable {
         return permissionGranted
     }
 
+    func permissionState() async -> PermissionAuthState {
+        permissionGranted ? .authorized : .denied
+    }
+
     func scheduleAlarm(for alarm: Alarm) async throws {
         scheduleAlarmCallCount += 1
         scheduleAlarmCalledWith.append(alarm)

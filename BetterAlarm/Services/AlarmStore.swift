@@ -328,6 +328,36 @@ actor AlarmStore {
         }
     }
 
+    // MARK: - Permissions
+
+    /// 스케줄링에 필요한 권한을 확인하고, 미결정이면 시스템 요청을 띄운다.
+    /// - Returns: 권한이 있거나 방금 허용됨 → true. 거부/불가 → false.
+    func ensureSchedulingPermissions(for mode: AlarmMode) async -> Bool {
+        switch mode {
+        case .local:
+            let state = await localNotificationService.permissionState()
+            switch state {
+            case .authorized:
+                return true
+            case .notDetermined:
+                return await localNotificationService.requestPermission()
+            case .denied, .unavailable:
+                return false
+            }
+        case .alarmKit:
+            guard let service = alarmKitService else { return false }
+            let state = await service.permissionState()
+            switch state {
+            case .authorized:
+                return true
+            case .notDetermined:
+                return await service.requestPermission()
+            case .denied, .unavailable:
+                return false
+            }
+        }
+    }
+
     // MARK: - Scheduling (AlarmMode 분기)
 
     /// AlarmMode에 따라 AlarmKitService 또는 LocalNotificationService로 분기하여 다음 알람을 스케줄한다.

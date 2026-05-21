@@ -5,6 +5,7 @@ import UserNotifications
 
 protocol LocalNotificationServiceProtocol: Sendable {
     func requestPermission() async -> Bool
+    func permissionState() async -> PermissionAuthState
     func scheduleAlarm(for alarm: Alarm, withRepeatingAlerts: Bool) async throws
     func scheduleSnooze(for alarm: Alarm, minutes: Int) async throws
     func cancelAlarm(for alarm: Alarm) async
@@ -101,6 +102,20 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
         } catch {
             AppLogger.error("Notification permission request failed: \(error)", category: .permission)
             return false
+        }
+    }
+
+    func permissionState() async -> PermissionAuthState {
+        let settings = await notificationCenter.notificationSettings()
+        switch settings.authorizationStatus {
+        case .authorized, .provisional, .ephemeral:
+            return .authorized
+        case .denied:
+            return .denied
+        case .notDetermined:
+            return .notDetermined
+        @unknown default:
+            return .denied
         }
     }
 

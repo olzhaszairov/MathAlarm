@@ -12,12 +12,14 @@ struct SettingsView: View {
     init(
         liveActivityManager: LiveActivityManager?,
         alarmStore: AlarmStore,
+        localNotificationService: LocalNotificationService,
         alarmKitService: (any AlarmKitServiceProtocol)? = nil,
         themeManager: AppThemeManager? = nil
     ) {
         _viewModel = State(initialValue: SettingsViewModel(
             liveActivityManager: liveActivityManager,
             alarmStore: alarmStore,
+            localNotificationService: localNotificationService,
             alarmKitService: alarmKitService,
             themeManager: themeManager
         ))
@@ -41,50 +43,24 @@ struct SettingsView: View {
                 Form {
                     // MARK: 알림 권한 섹션
                     Section {
-                        // 알림 권한 행
-                        HStack {
-                            Text("settings_notification_permission")
-                                .font(.body)
-                                .foregroundStyle(Color.pTextPrimary)
-                            Spacer()
-                            Text(viewModel.notificationAuthStatus)
-                                .font(.body)
-                                .foregroundStyle(viewModel.notificationAuthStatus == String(localized: "settings_permission_authorized") ? Color.pSuccess : Color.pWarning)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.85)
-                            Button("settings_open_app_settings") {
-                                openAppSettings()
-                            }
-                            .font(.caption)
-                            .foregroundStyle(theme.accentPrimary)
-                            .padding(.leading, 8)
+                        permissionRow(
+                            titleKey: "settings_notification_permission",
+                            status: viewModel.notificationAuthStatus,
+                            isAuthorized: viewModel.notificationPermissionState == .authorized,
+                            action: viewModel.notificationPermissionAction
+                        ) {
+                            await viewModel.handleNotificationPermissionAction()
                         }
-                        .frame(minHeight: 44)
-                        .accessibilityElement(children: .combine)
                         .accessibilityLabel(Text("settings_notification_permission_a11y_format \(viewModel.notificationAuthStatus)"))
 
-                        // AlarmKit 권한 행
-                        HStack {
-                            Text("settings_alarmkit_permission")
-                                .font(.body)
-                                .foregroundStyle(Color.pTextPrimary)
-                            Spacer()
-                            Text(viewModel.alarmKitAuthStatus)
-                                .font(.body)
-                                .foregroundStyle(viewModel.alarmKitAuthStatus == String(localized: "settings_permission_authorized") ? Color.pSuccess : Color.pTextSecondary)
-                                .lineLimit(1)
-                                .minimumScaleFactor(0.85)
-                            if viewModel.alarmKitAuthStatus != String(localized: "settings_requires_ios26") {
-                                Button("settings_open_app_settings") {
-                                    openAppSettings()
-                                }
-                                .font(.caption)
-                                .foregroundStyle(theme.accentPrimary)
-                                .padding(.leading, 8)
-                            }
+                        permissionRow(
+                            titleKey: "settings_alarmkit_permission",
+                            status: viewModel.alarmKitAuthStatus,
+                            isAuthorized: viewModel.alarmKitPermissionState == .authorized,
+                            action: viewModel.alarmKitPermissionAction
+                        ) {
+                            await viewModel.handleAlarmKitPermissionAction()
                         }
-                        .frame(minHeight: 44)
-                        .accessibilityElement(children: .combine)
                         .accessibilityLabel(Text("settings_alarmkit_permission_a11y_format \(viewModel.alarmKitAuthStatus)"))
                     } header: {
                         Text("settings_section_permission")
@@ -117,7 +93,7 @@ struct SettingsView: View {
                                 Spacer()
                                 if viewModel.lockScreenWidgetStatus != String(localized: "settings_requires_ios17") {
                                     Button("settings_open_app_settings") {
-                                        openAppSettings()
+                                        viewModel.openSystemSettings()
                                     }
                                     .font(.caption)
                                     .foregroundStyle(theme.accentPrimary)
@@ -138,7 +114,7 @@ struct SettingsView: View {
                     Section {
                         let subject = String(localized: "settings_feedback_email_subject")
                             .addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? "BetterAlarm%20Feedback"
-                        Link(destination: URL(string: "mailto:rlaskgns0212@naver.com?subject=\(subject)")!) {
+                        Link(destination: URL(string: "mailto:olzhaszairov@gmail.com?subject=\(subject)")!) {
                             HStack {
                                 Text("settings_feedback_button")
                                     .font(.body)
@@ -197,9 +173,32 @@ struct SettingsView: View {
         )
     }
 
-    private func openAppSettings() {
-        if let url = URL(string: UIApplication.openSettingsURLString) {
-            UIApplication.shared.open(url)
+    @ViewBuilder
+    private func permissionRow(
+        titleKey: LocalizedStringKey,
+        status: String,
+        isAuthorized: Bool,
+        action: SettingsPermissionAction,
+        onAction: @escaping () async -> Void
+    ) -> some View {
+        HStack(alignment: .center, spacing: 8) {
+            Text(titleKey)
+                .font(.body)
+                .foregroundStyle(Color.pTextPrimary)
+            Spacer(minLength: 8)
+            Text(status)
+                .font(.body)
+                .foregroundStyle(isAuthorized ? Color.pSuccess : Color.pWarning)
+                .lineLimit(1)
+                .minimumScaleFactor(0.85)
+            if action != .none {
+                Button(action == .request ? "settings_permission_allow_button" : "settings_open_app_settings") {
+                    Task { await onAction() }
+                }
+                .font(.caption.weight(.semibold))
+                .foregroundStyle(theme.accentPrimary)
+            }
         }
+        .frame(minHeight: 44)
     }
 }

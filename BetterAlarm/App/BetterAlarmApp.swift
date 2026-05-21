@@ -96,6 +96,7 @@ struct BetterAlarmApp: App {
                     SettingsView(
                         liveActivityManager: liveActivityManager,
                         alarmStore: alarmStore,
+                        localNotificationService: localNotificationService,
                         alarmKitService: alarmKitService,
                         themeManager: themeManager
                     )
@@ -202,6 +203,12 @@ struct BetterAlarmApp: App {
                 // 알람이 OS에 등록되지 않고, 이후 사용자가 권한을 허용해도 기존 알람들이
                 // 자동으로 재등록되지 않는다 (그래서 "폰 잠그면 알람 안 옴" 버그 발생).
                 _ = await localNotificationService.requestPermission()
+                if let alarmKitService {
+                    let kitState = await alarmKitService.permissionState()
+                    if kitState == .notDetermined {
+                        _ = await alarmKitService.requestPermission()
+                    }
+                }
 
                 // 알람 로드 + OS 알림 동기화 (local + alarmKit)
                 await alarmStore.loadAlarms()

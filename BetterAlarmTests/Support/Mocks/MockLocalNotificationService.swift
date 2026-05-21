@@ -32,6 +32,10 @@ final class MockLocalNotificationService: LocalNotificationServiceProtocol, @unc
         return permissionGranted
     }
 
+    func permissionState() async -> PermissionAuthState {
+        permissionGranted ? .authorized : .denied
+    }
+
     func scheduleAlarm(for alarm: Alarm, withRepeatingAlerts: Bool = true) async throws {
         scheduleAlarmCallCount += 1
         scheduleAlarmCalledWith.append(alarm)

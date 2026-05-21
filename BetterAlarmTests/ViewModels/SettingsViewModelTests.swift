@@ -43,19 +43,19 @@ final class SettingsViewModelTests: XCTestCase {
     // MARK: - 초기 상태
 
     func test_init_defaultState() {
-        let sut = SettingsViewModel(alarmStore: store)
+        let sut = SettingsViewModel(alarmStore: store, localNotificationService: mockNotif)
 
         XCTAssertTrue(sut.isLiveActivityEnabled, "기본값: isLiveActivityEnabled = true")
         XCTAssertFalse(sut.isLoading, "초기 isLoading = false")
-        XCTAssertEqual(sut.alarmKitAuthStatus, "확인 중...", "초기 alarmKitAuthStatus = '확인 중...'")
-        XCTAssertEqual(sut.notificationAuthStatus, "확인 중...", "초기 notificationAuthStatus = '확인 중...'")
+        XCTAssertEqual(sut.alarmKitAuthStatus, String(localized: "settings_permission_loading"))
+        XCTAssertEqual(sut.notificationAuthStatus, String(localized: "settings_permission_loading"))
     }
 
     // MARK: - appVersion / buildNumber
 
     /// Bundle에서 버전 정보가 로드되어야 한다 (빈 문자열이면 안 됨)
     func test_init_appVersionAndBuildNumberLoaded() {
-        let sut = SettingsViewModel(alarmStore: store)
+        let sut = SettingsViewModel(alarmStore: store, localNotificationService: mockNotif)
 
         // Bundle.main 값 없으면 fallback "1.0.0" / "1" 반환
         XCTAssertFalse(sut.appVersion.isEmpty, "appVersion이 비어있으면 안 된다")
@@ -68,12 +68,13 @@ final class SettingsViewModelTests: XCTestCase {
     func test_loadSettings_noAlarmKitService_showsiOS26Required() async {
         let sut = SettingsViewModel(
             alarmStore: store,
+            localNotificationService: mockNotif,
             alarmKitService: nil
         )
 
         await sut.loadSettings()
 
-        XCTAssertEqual(sut.alarmKitAuthStatus, "iOS 26 이상 필요",
+        XCTAssertEqual(sut.alarmKitAuthStatus, String(localized: "settings_requires_ios26"),
                        "alarmKitService nil → 'iOS 26 이상 필요'")
     }
 
@@ -82,12 +83,13 @@ final class SettingsViewModelTests: XCTestCase {
         mockAlarmKit.permissionGranted = true
         let sut = SettingsViewModel(
             alarmStore: store,
+            localNotificationService: mockNotif,
             alarmKitService: mockAlarmKit
         )
 
         await sut.loadSettings()
 
-        XCTAssertEqual(sut.alarmKitAuthStatus, "허용됨",
+        XCTAssertEqual(sut.alarmKitAuthStatus, String(localized: "settings_permission_authorized"),
                        "AlarmKit 권한 있을 때 '허용됨'")
     }
 
@@ -96,12 +98,13 @@ final class SettingsViewModelTests: XCTestCase {
         mockAlarmKit.permissionGranted = false
         let sut = SettingsViewModel(
             alarmStore: store,
+            localNotificationService: mockNotif,
             alarmKitService: mockAlarmKit
         )
 
         await sut.loadSettings()
 
-        XCTAssertEqual(sut.alarmKitAuthStatus, "허용 안 됨",
+        XCTAssertEqual(sut.alarmKitAuthStatus, String(localized: "settings_permission_denied"),
                        "AlarmKit 권한 없을 때 '허용 안 됨'")
     }
 
@@ -111,6 +114,7 @@ final class SettingsViewModelTests: XCTestCase {
     func test_loadSettings_completedLoading_isLoadingFalse() async {
         let sut = SettingsViewModel(
             alarmStore: store,
+            localNotificationService: mockNotif,
             alarmKitService: nil
         )
 
@@ -124,8 +128,9 @@ final class SettingsViewModelTests: XCTestCase {
     /// setLiveActivityEnabled(false) → isLiveActivityEnabled = false
     func test_setLiveActivityEnabled_false_updatesState() async {
         let sut = SettingsViewModel(
-            liveActivityManager: nil,  // nil이면 LiveActivity 동기화 없이 상태만 변경
-            alarmStore: store
+            liveActivityManager: nil,
+            alarmStore: store,
+            localNotificationService: mockNotif
         )
 
         await sut.setLiveActivityEnabled(false)
@@ -138,7 +143,8 @@ final class SettingsViewModelTests: XCTestCase {
     func test_setLiveActivityEnabled_true_updatesState() async {
         let sut = SettingsViewModel(
             liveActivityManager: nil,
-            alarmStore: store
+            alarmStore: store,
+            localNotificationService: mockNotif
         )
 
         // 먼저 false로
@@ -157,7 +163,7 @@ final class SettingsViewModelTests: XCTestCase {
     func test_bugE11_settingsViewModelInit_noCrash() {
         // SettingsViewModel.swift에 #if canImport(ActivityKit) 가드 추가됨.
         // 이 테스트가 통과하면 iOS 16에서도 초기화 크래시 없음을 의미.
-        let sut = SettingsViewModel(alarmStore: store)
+        let sut = SettingsViewModel(alarmStore: store, localNotificationService: mockNotif)
         XCTAssertNotNil(sut, "E11: SettingsViewModel 초기화 크래시 없어야 한다")
     }
 
@@ -168,6 +174,7 @@ final class SettingsViewModelTests: XCTestCase {
         let themeManager = AppThemeManager()
         let sut = SettingsViewModel(
             alarmStore: store,
+            localNotificationService: mockNotif,
             themeManager: themeManager
         )
         XCTAssertNotNil(sut.themeManager, "themeManager가 주입되어야 한다")
@@ -175,7 +182,7 @@ final class SettingsViewModelTests: XCTestCase {
 
     /// themeManager 미주입 시 nil이어야 한다
     func test_themeManager_notInjected_isNil() {
-        let sut = SettingsViewModel(alarmStore: store)
+        let sut = SettingsViewModel(alarmStore: store, localNotificationService: mockNotif)
         XCTAssertNil(sut.themeManager, "themeManager 미주입 시 nil이어야 한다")
     }
 }

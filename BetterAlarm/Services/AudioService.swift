@@ -26,7 +26,7 @@ extension AudioServiceProtocol {
 actor AudioService: AudioServiceProtocol {
     // MARK: - 🔇 테스트용 무음 모드 (DEBUG 빌드에서만 활성화)
     #if DEBUG
-    static let testSilentMode = true
+    static let testSilentMode = false
     #else
     static let testSilentMode = false
     #endif
