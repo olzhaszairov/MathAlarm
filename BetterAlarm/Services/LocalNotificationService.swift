@@ -72,12 +72,12 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
 
     // MARK: - Category Registration
 
-    /// 알람 알림 카테고리(정지/스누즈 액션)를 등록한다. 앱 시작 시 1회 호출.
+    /// 알람 알림 카테고리(앱 열기/스누즈 액션)를 등록한다. 앱 시작 시 1회 호출.
     func registerAlarmCategory() {
-        let stopAction = UNNotificationAction(
-            identifier: "STOP_ACTION",
-            title: String(localized: "notif_action_stop"),
-            options: [.destructive, .authenticationRequired]
+        let openAppAction = UNNotificationAction(
+            identifier: "OPEN_APP_ACTION",
+            title: String(localized: "notif_action_open_app"),
+            options: [.foreground]
         )
         let snoozeAction = UNNotificationAction(
             identifier: "SNOOZE_ACTION",
@@ -86,7 +86,7 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
         )
         let category = UNNotificationCategory(
             identifier: Self.alarmCategoryIdentifier,
-            actions: [stopAction, snoozeAction],
+            actions: [openAppAction, snoozeAction],
             intentIdentifiers: [],
             options: [.customDismissAction]
         )

@@ -234,11 +234,14 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         guard let alarmIDString = userInfo["alarmID"] as? String,
               let alarmID = UUID(uuidString: alarmIDString) else { return }
 
-        // cold launch: store 주입 전이면 pending에 저장 (기본 탭 액션만)
+        // cold launch: store 주입 전이면 pending에 저장
         guard let store = alarmStore else {
-            if response.actionIdentifier == UNNotificationDefaultActionIdentifier {
+            switch response.actionIdentifier {
+            case UNNotificationDefaultActionIdentifier, "OPEN_APP_ACTION":
                 pendingAlarmID = alarmID
                 AppLogger.info("Store not ready — saved pending alarm: \(alarmIDString)", category: .navigation)
+            default:
+                break
             }
             return
         }
@@ -250,12 +253,12 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         }
 
         switch response.actionIdentifier {
-        case "STOP_ACTION", UNNotificationDismissActionIdentifier:
-            // 알림에서 "정지" 또는 스와이프 dismiss → 알람 완료 처리
-            AppLogger.info("Alarm stopped via notification action: \(alarmIDString)", category: .alarm)
-            await audioService?.stopAlarmSound()
-            await store.handleAlarmCompleted(alarm)
-            await localNotificationService?.cancelAlarm(for: alarm)
+        case "OPEN_APP_ACTION":
+            await presentRingingAlarm(alarm, alarmIDString: alarmIDString)
+
+        case UNNotificationDismissActionIdentifier:
+            // 알림만 닫음 — 알람은 앱에서 수학 문제로 정지
+            AppLogger.info("Notification dismissed (alarm still ringing): \(alarmIDString)", category: .alarm)
 
         case "SNOOZE_ACTION":
             // 알림에서 "스누즈" → 5분 후 재알림
@@ -265,28 +268,30 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
             await localNotificationService?.cancelAlarm(for: alarm)
 
         default:
-            // 알림 탭 → 앱 열고 울림 화면 표시
-            AppLogger.info("User tapped notification → deeplink to ringing screen: \(alarmIDString)", category: .navigation)
-
-            // 즉시 오디오 재생 시작 (UI 렌더링 전에 소리부터 나도록)
-            if let audioService {
-                await audioService.stopSilentLoop()
-                let isPlaying = await audioService.isAlarmPlaying
-                if !isPlaying {
-                    try? await audioService.playAlarmSound(
-                        soundName: alarm.soundName,
-                        isSilent: alarm.isSilentAlarm,
-                        loop: true
-                    )
-                }
-            }
-
-            pendingAlarmID = alarmID
-            NotificationCenter.default.post(
-                name: .alarmShouldRing,
-                object: nil,
-                userInfo: ["alarmID": alarmIDString]
-            )
+            await presentRingingAlarm(alarm, alarmIDString: alarmIDString)
         }
+    }
+
+    private func presentRingingAlarm(_ alarm: Alarm, alarmIDString: String) async {
+        AppLogger.info("Opening ringing screen for alarm: \(alarmIDString)", category: .navigation)
+
+        if let audioService {
+            await audioService.stopSilentLoop()
+            let isPlaying = await audioService.isAlarmPlaying
+            if !isPlaying {
+                try? await audioService.playAlarmSound(
+                    soundName: alarm.soundName,
+                    isSilent: alarm.isSilentAlarm,
+                    loop: true
+                )
+            }
+        }
+
+        pendingAlarmID = alarm.id
+        NotificationCenter.default.post(
+            name: .alarmShouldRing,
+            object: nil,
+            userInfo: ["alarmID": alarmIDString]
+        )
     }
 }

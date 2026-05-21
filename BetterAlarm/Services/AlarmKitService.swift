@@ -76,12 +76,14 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         let alarmID = UUID()
         currentAlarmKitID = alarmID
 
+        UserDefaults.standard.set(alarm.id.uuidString, forKey: AlarmIntentBridge.activeAppAlarmIDKey)
+
         let alert = AlarmPresentation.Alert(
             title: LocalizedStringResource(stringLiteral: alarm.displayTitle),
             stopButton: AlarmButton(
-                text: LocalizedStringResource("alarmkit_button_stop"),
+                text: LocalizedStringResource("alarmkit_button_open"),
                 textColor: .white,
-                systemImageName: "stop.fill"
+                systemImageName: "arrow.right.circle.fill"
             ),
             secondaryButton: AlarmButton(
                 text: LocalizedStringResource("alarmkit_button_snooze"),
@@ -140,7 +142,7 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         let config = Config(
             schedule: schedule,
             attributes: attributes,
-            stopIntent: StopAlarmIntent(alarmID: alarmID.uuidString),
+            stopIntent: OpenAlarmIntent(appAlarmID: alarm.id.uuidString),
             secondaryIntent: SnoozeAlarmIntent(alarmID: alarmID.uuidString)
         )
 
@@ -181,10 +183,20 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         let newID = UUID()
         let snoozeDate = Date().addingTimeInterval(5 * 60)
 
+        let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
+
         let alert = AlarmPresentation.Alert(
             title: LocalizedStringResource("alarmkit_alert_snooze_title"),
-            stopButton: AlarmButton(text: LocalizedStringResource("alarmkit_button_stop"), textColor: .white, systemImageName: "stop.fill"),
-            secondaryButton: AlarmButton(text: LocalizedStringResource("alarmkit_button_snooze"), textColor: .white, systemImageName: "moon.zzz.fill"),
+            stopButton: AlarmButton(
+                text: LocalizedStringResource("alarmkit_button_open"),
+                textColor: .white,
+                systemImageName: "arrow.right.circle.fill"
+            ),
+            secondaryButton: AlarmButton(
+                text: LocalizedStringResource("alarmkit_button_snooze"),
+                textColor: .white,
+                systemImageName: "moon.zzz.fill"
+            ),
             secondaryButtonBehavior: .custom
         )
         let presentation = AlarmPresentation(alert: alert)
@@ -197,7 +209,7 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         let config = Config(
             schedule: .fixed(snoozeDate),
             attributes: attributes,
-            stopIntent: StopAlarmIntent(alarmID: newID.uuidString),
+            stopIntent: OpenAlarmIntent(appAlarmID: appAlarmID),
             secondaryIntent: SnoozeAlarmIntent(alarmID: newID.uuidString)
         )
 

@@ -1389,6 +1389,23 @@
         }
       }
     },
+    "alarmkit_button_open" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open app"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 열기"
+          }
+        }
+      }
+    },
     "alarmkit_button_stop" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1695,6 +1712,40 @@
         }
       }
     },
+    "intent_open_description" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Opens the app to solve a math problem and stop the alarm."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱을 열어 수학 문제를 풀고 알람을 끕니다"
+          }
+        }
+      }
+    },
+    "intent_open_title" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open App"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 열기"
+          }
+        }
+      }
+    },
     "intent_stop_description" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1827,6 +1878,23 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "스누즈 (5분)"
+          }
+        }
+      }
+    },
+    "notif_action_open_app" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Open app"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "앱 열기"
           }
         }
       }

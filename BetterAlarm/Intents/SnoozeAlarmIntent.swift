@@ -38,12 +38,14 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
         let newID = UUID()
         let snoozeDate = Date().addingTimeInterval(5 * 60)
 
+        let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
+
         let alert = AlarmPresentation.Alert(
             title: LocalizedStringResource("alarmkit_alert_snooze_title"),
             stopButton: AlarmButton(
-                text: LocalizedStringResource("alarmkit_button_stop"),
+                text: LocalizedStringResource("alarmkit_button_open"),
                 textColor: .white,
-                systemImageName: "stop.fill"
+                systemImageName: "arrow.right.circle.fill"
             ),
             secondaryButton: AlarmButton(
                 text: LocalizedStringResource("alarmkit_button_snooze"),
@@ -62,7 +64,7 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
         let config = Config(
             schedule: .fixed(snoozeDate),
             attributes: attributes,
-            stopIntent: StopAlarmIntent(alarmID: newID.uuidString),
+            stopIntent: OpenAlarmIntent(appAlarmID: appAlarmID),
             secondaryIntent: SnoozeAlarmIntent(alarmID: newID.uuidString)
         )
         _ = try? await AlarmManager.shared.schedule(id: newID, configuration: config)

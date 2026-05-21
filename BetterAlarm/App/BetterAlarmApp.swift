@@ -161,14 +161,7 @@ struct BetterAlarmApp: App {
                         await alarmStore.scheduleNextAlarm(force: true)
                         // R8-3: 시간 경과로 가장 가까운 알람이 바뀌었을 수 있으므로 Live Activity 동기화
                         await alarmStore.syncLiveActivity()
-                        // pending 알람 처리 (race condition 방지)
-                        if let pendingID = appDelegate.consumePendingAlarmID() {
-                            let alarms = await alarmStore.alarms
-                            if let alarm = alarms.first(where: { $0.id == pendingID }) {
-                                AppLogger.info("Processing pending alarm from notification tap: \(alarm.displayTitle)", category: .alarm)
-                                ringingAlarm = alarm
-                            }
-                        }
+                        await presentPendingRingingAlarmIfNeeded()
                     case .inactive:
                         break
                     @unknown default:
@@ -201,7 +194,7 @@ struct BetterAlarmApp: App {
                 // AppDelegate에 의존성 주입
                 appDelegate.configure(alarmStore: alarmStore, localNotificationService: localNotificationService, audioService: audioService)
 
-                // 알람 카테고리 등록 (정지/스누즈 액션) — 권한 요청 이전에 등록되어야 함
+                // 알람 카테고리 등록 (앱 열기/스누즈 액션) — 권한 요청 이전에 등록되어야 함
                 await localNotificationService.registerAlarmCategory()
 
                 // 알림 권한 요청 — scheduleNextAlarm 이전에 수행해야 한다.
@@ -217,8 +210,42 @@ struct BetterAlarmApp: App {
                 // R8-3: Live Activity 초기화는 AlarmStore 단일 진입점을 통해 수행
                 await alarmStore.syncLiveActivity()
 
+                await presentPendingRingingAlarmIfNeeded()
+
                 AppLogger.info("App launch tasks completed", category: .lifecycle)
             }
+        }
+    }
+
+    // MARK: - Pending Ringing (notification / AlarmKit intent)
+
+    @MainActor
+    private func presentPendingRingingAlarmIfNeeded() async {
+        guard ringingAlarm == nil else { return }
+
+        var pendingID = appDelegate.consumePendingAlarmID()
+        if pendingID == nil {
+            pendingID = await alarmStore.consumePendingOpenAlarmFromIntent()
+        }
+        guard let pendingID else { return }
+
+        let alarms = await alarmStore.alarms
+        guard let alarm = alarms.first(where: { $0.id == pendingID }) else {
+            AppLogger.warning("Pending ringing alarm not found: \(pendingID)", category: .alarm)
+            return
+        }
+
+        AppLogger.info("Presenting pending ringing alarm: \(alarm.displayTitle)", category: .alarm)
+        ringingAlarm = alarm
+
+        await audioService.stopSilentLoop()
+        let isPlaying = await audioService.isAlarmPlaying
+        if !isPlaying {
+            try? await audioService.playAlarmSound(
+                soundName: alarm.soundName,
+                isSilent: alarm.isSilentAlarm,
+                loop: true
+            )
         }
     }
 

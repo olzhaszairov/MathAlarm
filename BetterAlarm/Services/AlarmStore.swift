@@ -189,6 +189,14 @@ actor AlarmStore {
 
     /// AlarmKit SnoozeAlarmIntent가 별도 프로세스에서 저장한 snoozeDate를 앱 메모리에 동기화한다.
     /// 앱 포그라운드 복귀 시 호출.
+    /// OpenAlarmIntent가 저장한 앱 알람 ID를 소비한다 (울림 화면 표시용).
+    func consumePendingOpenAlarmFromIntent() -> UUID? {
+        let defaults = UserDefaults.standard
+        defer { defaults.removeObject(forKey: AlarmIntentBridge.pendingOpenAlarmKey) }
+        guard let idString = defaults.string(forKey: AlarmIntentBridge.pendingOpenAlarmKey) else { return nil }
+        return UUID(uuidString: idString)
+    }
+
     func syncSnoozeFromIntent() {
         let defaults = UserDefaults.standard
         guard defaults.bool(forKey: "alarmSnoozedFromIntent"),
