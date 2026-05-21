@@ -245,6 +245,7 @@ struct BetterAlarmApp: App {
         AppLogger.info("Presenting pending ringing alarm: \(alarm.displayTitle)", category: .alarm)
         ringingAlarm = alarm
 
+        await alarmStore.stopAlarmKitAlertsIfNeeded()
         await audioService.stopSilentLoop()
         let isPlaying = await audioService.isAlarmPlaying
         if !isPlaying {

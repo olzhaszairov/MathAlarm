@@ -328,6 +328,14 @@ actor AlarmStore {
         }
     }
 
+    // MARK: - AlarmKit
+
+    /// Открытие приложения с экрана блокировки: останавливает системный AlarmKit, звук играет в приложении.
+    func stopAlarmKitAlertsIfNeeded() async {
+        guard let service = alarmKitService else { return }
+        await service.stopAllAlarms()
+    }
+
     // MARK: - Permissions
 
     /// 스케줄링에 필요한 권한을 확인하고, 미결정이면 시스템 요청을 띄운다.

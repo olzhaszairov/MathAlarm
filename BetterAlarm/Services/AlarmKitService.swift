@@ -1,5 +1,6 @@
 import Foundation
 #if os(iOS)
+import ActivityKit
 import AlarmKit
 #endif
 
@@ -151,7 +152,7 @@ actor AlarmKitService: AlarmKitServiceProtocol {
             schedule = .fixed(triggerDate)
         }
 
-        let config = Config(
+        let config = makeConfiguration(
             schedule: schedule,
             attributes: attributes,
             stopIntent: OpenAlarmIntent(appAlarmID: alarm.id.uuidString),
@@ -159,7 +160,23 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         )
 
         _ = try await manager.schedule(id: alarmID, configuration: config)
-        AppLogger.info("AlarmKit alarm scheduled: '\(alarm.displayTitle)' id=\(alarmID)", category: .alarmKit)
+        AppLogger.info("AlarmKit alarm scheduled: '\(alarm.displayTitle)' id=\(alarmID) sound=\(AlarmDefaults.lockScreenSoundName)", category: .alarmKit)
+    }
+
+    private func makeConfiguration(
+        schedule: AlarmKit.Alarm.Schedule,
+        attributes: AlarmAttributes<BetterAlarmMetadata>,
+        stopIntent: OpenAlarmIntent,
+        secondaryIntent: SnoozeAlarmIntent
+    ) -> AlarmManager.AlarmConfiguration<BetterAlarmMetadata> {
+        let sound = AlertConfiguration.AlertSound.named(AlarmDefaults.lockScreenSoundName)
+        return AlarmManager.AlarmConfiguration(
+            schedule: schedule,
+            attributes: attributes,
+            stopIntent: stopIntent,
+            secondaryIntent: secondaryIntent,
+            sound: sound
+        )
     }
 
     // MARK: - Cancel / Stop
@@ -217,8 +234,7 @@ actor AlarmKitService: AlarmKitServiceProtocol {
             tintColor: .purple
         )
 
-        typealias Config = AlarmManager.AlarmConfiguration<BetterAlarmMetadata>
-        let config = Config(
+        let config = makeConfiguration(
             schedule: .fixed(snoozeDate),
             attributes: attributes,
             stopIntent: OpenAlarmIntent(appAlarmID: appAlarmID),

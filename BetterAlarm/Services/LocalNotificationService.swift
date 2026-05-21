@@ -57,14 +57,11 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
 
     // MARK: - Notification Sound Helper
 
-    /// 알람의 사운드 설정에 따라 UNNotificationSound를 반환한다.
-    /// default / alarms → Resources/alarms.mp3
+    /// default / alarms → alarms_lock.wav (30 с, лимит iOS для уведомлений)
     private func notificationSound(for alarm: Alarm) -> UNNotificationSound? {
-        // 🔇 테스트용 무음 모드 — AudioService.testSilentMode와 연동
         if AudioService.testSilentMode { return nil }
 
-        let name = (alarm.soundName == "default") ? AlarmDefaults.defaultSoundName : alarm.soundName
-        return UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(name).mp3"))
+        return UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(AlarmDefaults.lockScreenSoundName).wav"))
     }
 
     // MARK: - Category Registration

@@ -1,5 +1,6 @@
 import AppIntents
 #if os(iOS)
+import ActivityKit
 import AlarmKit
 #endif
 
@@ -60,12 +61,13 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
             tintColor: .purple
         )
 
-        typealias Config = AlarmManager.AlarmConfiguration<BetterAlarmMetadata>
-        let config = Config(
+        let sound = AlertConfiguration.AlertSound.named(AlarmDefaults.lockScreenSoundName)
+        let config = AlarmManager.AlarmConfiguration(
             schedule: .fixed(snoozeDate),
             attributes: attributes,
             stopIntent: OpenAlarmIntent(appAlarmID: appAlarmID),
-            secondaryIntent: SnoozeAlarmIntent(alarmID: newID.uuidString)
+            secondaryIntent: SnoozeAlarmIntent(alarmID: newID.uuidString),
+            sound: sound
         )
         _ = try? await AlarmManager.shared.schedule(id: newID, configuration: config)
 

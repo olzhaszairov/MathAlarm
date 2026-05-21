@@ -275,6 +275,8 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
     private func presentRingingAlarm(_ alarm: Alarm, alarmIDString: String) async {
         AppLogger.info("Opening ringing screen for alarm: \(alarmIDString)", category: .navigation)
 
+        await alarmStore?.stopAlarmKitAlertsIfNeeded()
+
         if let audioService {
             await audioService.stopSilentLoop()
             let isPlaying = await audioService.isAlarmPlaying
