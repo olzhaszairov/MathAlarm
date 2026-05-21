@@ -12,6 +12,9 @@ final class AlarmRingingViewModel {
 
     private(set) var currentTimeString: String = ""
     private(set) var isRinging: Bool = false
+    private(set) var mathChallenge: MathStopChallenge
+    var stopAnswerInput: String = ""
+    private(set) var stopAnswerError: Bool = false
 
     let alarm: Alarm
 
@@ -25,21 +28,26 @@ final class AlarmRingingViewModel {
     /// 햅틱 피드백 클로저 — View 레이어에서 HapticManager를 주입한다.
     private let onStopHaptic: @MainActor () -> Void
     private let onSnoozeHaptic: @MainActor () -> Void
+    private let onWrongAnswerHaptic: @MainActor () -> Void
 
     init(
         alarm: Alarm,
         audioService: AudioService,
         volumeService: VolumeService,
         alarmStore: AlarmStore,
+        mathChallenge: MathStopChallenge = .random(),
         onStopHaptic: @escaping @MainActor () -> Void = {},
-        onSnoozeHaptic: @escaping @MainActor () -> Void = {}
+        onSnoozeHaptic: @escaping @MainActor () -> Void = {},
+        onWrongAnswerHaptic: @escaping @MainActor () -> Void = {}
     ) {
         self.alarm = alarm
         self.audioService = audioService
         self.volumeService = volumeService
         self.alarmStore = alarmStore
+        self.mathChallenge = mathChallenge
         self.onStopHaptic = onStopHaptic
         self.onSnoozeHaptic = onSnoozeHaptic
+        self.onWrongAnswerHaptic = onWrongAnswerHaptic
         updateTimeString()
     }
 
@@ -78,6 +86,28 @@ final class AlarmRingingViewModel {
         } catch {
             AppLogger.error("Failed to play alarm sound: \(error)", category: .alarm)
         }
+    }
+
+    func clearStopAnswerError() {
+        stopAnswerError = false
+    }
+
+    /// 산술 정답이 맞으면 알람을 정지한다. 성공 시 true.
+    func submitStopAnswer() async -> Bool {
+        guard let answer = Int(stopAnswerInput.trimmingCharacters(in: .whitespacesAndNewlines)) else {
+            stopAnswerError = true
+            onWrongAnswerHaptic()
+            return false
+        }
+
+        guard mathChallenge.isCorrect(answer) else {
+            stopAnswerError = true
+            onWrongAnswerHaptic()
+            return false
+        }
+
+        await stopAlarm()
+        return true
     }
 
     /// 알람을 정지하고 완료 처리한다.

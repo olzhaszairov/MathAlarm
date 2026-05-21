@@ -1059,13 +1059,13 @@
         "en" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "Turns off the alarm"
+            "value" : "Enter the correct answer to turn off the alarm"
           }
         },
         "ko" : {
           "stringUnit" : {
             "state" : "translated",
-            "value" : "알람을 끕니다"
+            "value" : "정답을 입력하면 알람이 꺼집니다"
           }
         }
       }
@@ -1083,6 +1083,91 @@
           "stringUnit" : {
             "state" : "translated",
             "value" : "정지"
+          }
+        }
+      }
+    },
+    "alarm_ringing_math_answer_a11y" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Answer"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "정답 입력"
+          }
+        }
+      }
+    },
+    "alarm_ringing_math_answer_placeholder" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Your answer"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "정답 입력"
+          }
+        }
+      }
+    },
+    "alarm_ringing_math_equation_a11y" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Solve: %@"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "문제: %@"
+          }
+        }
+      }
+    },
+    "alarm_ringing_math_submit_button" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Stop alarm"
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "알람 끄기"
+          }
+        }
+      }
+    },
+    "alarm_ringing_math_wrong" : {
+      "extractionState" : "manual",
+      "localizations" : {
+        "en" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "Wrong answer. Try again."
+          }
+        },
+        "ko" : {
+          "stringUnit" : {
+            "state" : "translated",
+            "value" : "정답이 아닙니다. 다시 입력하세요."
           }
         }
       }

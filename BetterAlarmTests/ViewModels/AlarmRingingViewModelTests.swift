@@ -43,6 +43,29 @@ final class AlarmRingingViewModelTests: XCTestCase {
         XCTAssertEqual(vm.alarm.id, alarm.id)
         XCTAssertFalse(vm.isRinging, "초기 isRinging은 false")
         XCTAssertFalse(vm.currentTimeString.isEmpty, "초기 currentTimeString은 비어있지 않음")
+        XCTAssertFalse(vm.mathChallenge.equationText.isEmpty)
+    }
+
+    func test_submitStopAnswer_wrongAnswer_setsError() async {
+        let challenge = MathStopChallenge(left: 45, right: 32, operation: .add)
+        let vm = makeViewModel(alarm: AlarmFixtures.makeOnceAlarm(), mathChallenge: challenge)
+        vm.stopAnswerInput = "1"
+
+        let stopped = await vm.submitStopAnswer()
+
+        XCTAssertFalse(stopped)
+        XCTAssertTrue(vm.stopAnswerError)
+    }
+
+    func test_submitStopAnswer_correctAnswer_stops() async {
+        let challenge = MathStopChallenge(left: 45, right: 32, operation: .add)
+        let vm = makeViewModel(alarm: AlarmFixtures.makeOnceAlarm(), mathChallenge: challenge)
+        vm.stopAnswerInput = "77"
+
+        let stopped = await vm.submitStopAnswer()
+
+        XCTAssertTrue(stopped)
+        XCTAssertFalse(vm.isRinging)
     }
 
     /// 서로 다른 알람으로 초기화 시 각각의 alarm.id를 유지해야 한다
@@ -159,12 +182,16 @@ final class AlarmRingingViewModelTests: XCTestCase {
 
     // MARK: - Helper
 
-    private func makeViewModel(alarm: Alarm) -> AlarmRingingViewModel {
+    private func makeViewModel(
+        alarm: Alarm,
+        mathChallenge: MathStopChallenge = MathStopChallenge(left: 10, right: 10, operation: .add)
+    ) -> AlarmRingingViewModel {
         AlarmRingingViewModel(
             alarm: alarm,
             audioService: AudioService(volumeService: VolumeService()),
             volumeService: VolumeService(),
-            alarmStore: store
+            alarmStore: store,
+            mathChallenge: mathChallenge
         )
     }
 }

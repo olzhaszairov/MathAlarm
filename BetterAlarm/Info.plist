@@ -2,31 +2,20 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
-	<key>CFBundleDevelopmentRegion</key>
-	<string>en</string>
+	<key>BGTaskSchedulerPermittedIdentifiers</key>
+	<array>
+		<string>com.nahun.BetterAlarm.alarm-refresh</string>
+	</array>
 	<key>CFBundleLocalizations</key>
 	<array>
 		<string>en</string>
 		<string>ko</string>
 	</array>
-	<key>UILaunchScreen</key>
-	<dict/>
 	<key>NSAlarmKitUsageDescription</key>
 	<string>This app needs permission to schedule alarms.</string>
 	<key>NSUserActivityTypes</key>
 	<array>
 		<string>AlarmActivityAttributes</string>
-	</array>
-	<key>NSSupportsLiveActivities</key>
-	<true/>
-	<key>UIBackgroundModes</key>
-	<array>
-		<string>audio</string>
-		<string>fetch</string>
-	</array>
-	<key>BGTaskSchedulerPermittedIdentifiers</key>
-	<array>
-		<string>com.nahun.BetterAlarm.alarm-refresh</string>
 	</array>
 	<key>UIApplicationSceneManifest</key>
 	<dict>
@@ -45,5 +34,12 @@
 			</array>
 		</dict>
 	</dict>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>fetch</string>
+	</array>
+	<key>UILaunchScreen</key>
+	<dict/>
 </dict>
 </plist>

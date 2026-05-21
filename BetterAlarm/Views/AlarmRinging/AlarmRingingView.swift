@@ -22,7 +22,8 @@ struct AlarmRingingView: View {
             volumeService: volumeService,
             alarmStore: alarmStore,
             onStopHaptic: { HapticManager.notification(.success) },
-            onSnoozeHaptic: { HapticManager.impact() }
+            onSnoozeHaptic: { HapticManager.impact() },
+            onWrongAnswerHaptic: { HapticManager.notification(.error) }
         ))
     }
 
@@ -82,23 +83,10 @@ struct AlarmRingingView: View {
     }
 
     private var buttonArea: some View {
-        VStack(spacing: 20) {
-            // 정지 버튼 (큰 원형)
-            Button {
-                Task {
-                    await viewModel.stopAlarm()
-                    dismiss()
-                }
-            } label: {
-                Text("alarm_ringing_stop_button")
-                    .font(.title2.weight(.semibold))
-                    .foregroundStyle(.white)
-                    .frame(width: 120, height: 120)
-                    .background(theme.accentPrimary)
-                    .clipShape(Circle())
-            }
-            .accessibilityLabel(Text("alarm_ringing_stop_a11y"))
-            .accessibilityHint(Text("alarm_ringing_stop_a11y_hint"))
+        @Bindable var vm = viewModel
+
+        return VStack(spacing: 20) {
+            mathStopSection(vm: vm)
 
             // 스누즈 버튼 (작은 캡슐형 아웃라인) — minWidth 200으로 상향 (SPEC §7.2F)
             Button {
@@ -119,5 +107,58 @@ struct AlarmRingingView: View {
             .accessibilityLabel(Text("alarm_ringing_snooze_a11y"))
             .accessibilityHint(Text("alarm_ringing_snooze_a11y_hint"))
         }
+    }
+
+    private func mathStopSection(vm: AlarmRingingViewModel) -> some View {
+        VStack(spacing: 16) {
+            Text(vm.mathChallenge.equationText)
+                .font(.system(size: 44, weight: .semibold, design: .rounded))
+                .foregroundStyle(Color.pTextPrimary)
+                .accessibilityLabel(
+                    Text("alarm_ringing_math_equation_a11y \(vm.mathChallenge.equationText)")
+                )
+
+            TextField("alarm_ringing_math_answer_placeholder", text: Binding(
+                get: { vm.stopAnswerInput },
+                set: { newValue in
+                    vm.stopAnswerInput = String(newValue.filter(\.isNumber))
+                    vm.clearStopAnswerError()
+                }
+            ))
+            .keyboardType(.numberPad)
+            .multilineTextAlignment(.center)
+            .font(.title2.weight(.medium))
+            .foregroundStyle(Color.pTextPrimary)
+            .padding(.vertical, 14)
+            .padding(.horizontal, 20)
+            .background(Color.pGlassFill)
+            .clipShape(RoundedRectangle(cornerRadius: 14, style: .continuous))
+            .accessibilityLabel(Text("alarm_ringing_math_answer_a11y"))
+
+            if vm.stopAnswerError {
+                Text("alarm_ringing_math_wrong")
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(Color.pAccentPrimary)
+            }
+
+            Button {
+                Task {
+                    if await vm.submitStopAnswer() {
+                        dismiss()
+                    }
+                }
+            } label: {
+                Text("alarm_ringing_math_submit_button")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(.white)
+                    .frame(maxWidth: .infinity)
+                    .frame(height: 56)
+                    .background(theme.accentPrimary)
+                    .clipShape(Capsule())
+            }
+            .accessibilityLabel(Text("alarm_ringing_stop_a11y"))
+            .accessibilityHint(Text("alarm_ringing_stop_a11y_hint"))
+        }
+        .frame(maxWidth: 320)
     }
 }
