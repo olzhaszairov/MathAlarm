@@ -57,11 +57,11 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
 
     // MARK: - Notification Sound Helper
 
-    /// default / alarms → alarms_lock.wav (30 с, лимит iOS для уведомлений)
+    /// default / alarms → alarms_lock.caf (≤30 с, лимит iOS для уведомлений)
     private func notificationSound(for alarm: Alarm) -> UNNotificationSound? {
         if AudioService.testSilentMode { return nil }
 
-        return UNNotificationSound(named: UNNotificationSoundName(rawValue: "\(AlarmDefaults.lockScreenSoundName).wav"))
+        return UNNotificationSound(named: UNNotificationSoundName(rawValue: AlarmDefaults.lockScreenSoundFileName))
     }
 
     // MARK: - Category Registration

@@ -61,7 +61,7 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
             tintColor: .purple
         )
 
-        let sound = AlertConfiguration.AlertSound.named(AlarmDefaults.lockScreenSoundName)
+        let sound = AlertConfiguration.AlertSound.named(AlarmDefaults.lockScreenSoundFileName)
         let config = AlarmManager.AlarmConfiguration(
             schedule: .fixed(snoozeDate),
             attributes: attributes,

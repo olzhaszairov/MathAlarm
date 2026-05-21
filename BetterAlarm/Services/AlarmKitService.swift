@@ -160,7 +160,7 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         )
 
         _ = try await manager.schedule(id: alarmID, configuration: config)
-        AppLogger.info("AlarmKit alarm scheduled: '\(alarm.displayTitle)' id=\(alarmID) sound=\(AlarmDefaults.lockScreenSoundName)", category: .alarmKit)
+        AppLogger.info("AlarmKit alarm scheduled: '\(alarm.displayTitle)' id=\(alarmID) sound=\(AlarmDefaults.lockScreenSoundFileName)", category: .alarmKit)
     }
 
     private func makeConfiguration(
@@ -169,7 +169,13 @@ actor AlarmKitService: AlarmKitServiceProtocol {
         stopIntent: OpenAlarmIntent,
         secondaryIntent: SnoozeAlarmIntent
     ) -> AlarmManager.AlarmConfiguration<BetterAlarmMetadata> {
-        let sound = AlertConfiguration.AlertSound.named(AlarmDefaults.lockScreenSoundName)
+        if AlarmDefaults.lockScreenSoundURLInBundle() == nil {
+            AppLogger.error(
+                "Lock screen sound missing in bundle: \(AlarmDefaults.lockScreenSoundFileName)",
+                category: .alarmKit
+            )
+        }
+        let sound = AlertConfiguration.AlertSound.named(AlarmDefaults.lockScreenSoundFileName)
         return AlarmManager.AlarmConfiguration(
             schedule: schedule,
             attributes: attributes,
