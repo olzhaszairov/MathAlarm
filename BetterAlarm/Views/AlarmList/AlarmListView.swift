@@ -30,25 +30,34 @@ struct AlarmListView: View {
                 if viewModel.alarms.isEmpty && !viewModel.isLoading {
                     emptyState
                 } else {
-                    ScrollView {
-                        LazyVStack(spacing: 0) {
-                            ForEach(viewModel.alarms, id: \.id) { alarm in
-                                AlarmRowView(alarm: alarm, onToggle: { desiredOn in
-                                    Task {
-                                        viewModel.requestToggleVisualState(alarm, desiredOn: desiredOn)
-                                        HapticManager.selection()
-                                    }
-                                }, onTap: {
-                                    selectedAlarm = alarm
-                                    showDetail = true
-                                    HapticManager.impact(.light)
-                                })
-                                .pLoadingOverlay(isLoading: .constant(viewModel.togglingAlarmID == alarm.id))
-                                .transition(.opacity.combined(with: .move(edge: .top)))
-                            }
+                    List {
+                        ForEach(viewModel.alarms, id: \.id) { alarm in
+                            AlarmRowView(alarm: alarm, onToggle: { desiredOn in
+                                Task {
+                                    viewModel.requestToggleVisualState(alarm, desiredOn: desiredOn)
+                                    HapticManager.selection()
+                                }
+                            }, onTap: {
+                                selectedAlarm = alarm
+                                showDetail = true
+                                HapticManager.impact(.light)
+                            })
+                            .alarmSwipeActions(
+                                alarm: alarm,
+                                onDelete: { Task { await viewModel.deleteAlarm(alarm) } },
+                                onSkip: { Task { await viewModel.skipOnceAlarm(alarm) } },
+                                onClearSkip: { Task { await viewModel.clearSkip(alarm) } }
+                            )
+                            .pLoadingOverlay(isLoading: .constant(viewModel.togglingAlarmID == alarm.id))
+                            .listRowBackground(Color.clear)
+                            .listRowSeparator(.hidden)
+                            .listRowInsets(EdgeInsets())
                         }
-                        .animation(.easeInOut(duration: 0.3), value: viewModel.alarms)
                     }
+                    .listStyle(.plain)
+                    .scrollContentBackground(.hidden)
+                    .background(Color.clear)
+                    .animation(.easeInOut(duration: 0.3), value: viewModel.alarms)
                 }
             }
         }
@@ -69,7 +78,7 @@ struct AlarmListView: View {
                 }
             } onDeleted: {
                 Task {
-                    await viewModel.loadAlarms()
+                    await viewModel.refreshState()
                     viewModel.showDeleteToast()
                 }
             }

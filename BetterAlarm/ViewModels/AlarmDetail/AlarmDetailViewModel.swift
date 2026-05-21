@@ -196,12 +196,14 @@ final class AlarmDetailViewModel {
 
     // MARK: - Delete
 
-    func deleteAlarm() async {
-        guard let alarm = editingAlarm else { return }
+    @discardableResult
+    func deleteAlarm() async -> Bool {
+        guard let alarm = editingAlarm else { return false }
         isDeleting = true
         defer { isDeleting = false }
         AppLogger.info("Deleting alarm from detail: '\(alarm.displayTitle)'", category: .alarm)
         await store.deleteAlarm(alarm)
+        return true
     }
 
     // MARK: - Save

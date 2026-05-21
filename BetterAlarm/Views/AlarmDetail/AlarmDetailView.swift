@@ -32,6 +32,9 @@ struct AlarmDetailView: View {
         NavigationStack {
             ZStack {
                 PGradientBackground()
+                    .onTapGesture {
+                        focusedField = nil
+                    }
 
                 Form {
                     // MARK: 시간 선택
@@ -126,7 +129,9 @@ struct AlarmDetailView: View {
                         Section {
                             Button(role: .destructive) {
                                 Task {
-                                    await viewModel.deleteAlarm()
+                                    let deleted = await viewModel.deleteAlarm()
+                                    guard deleted else { return }
+                                    HapticManager.notification(.success)
                                     onDeleted?()
                                     dismiss()
                                 }
@@ -135,10 +140,10 @@ struct AlarmDetailView: View {
                                     Spacer()
                                     Text("alarm_detail_delete_button")
                                         .font(.body.weight(.medium))
-                                        .foregroundStyle(Color.pWarning)
                                     Spacer()
                                 }
                             }
+                            .buttonStyle(.borderless)
                             .disabled(viewModel.isDeleting)
                             .frame(minHeight: 44)
                         }
@@ -150,16 +155,6 @@ struct AlarmDetailView: View {
                 // 폼 스크롤 시 키보드 자연스럽게 내림 (드래그 추적)
                 .scrollDismissesKeyboard(.interactively)
             }
-            // 빈 영역 탭으로 키보드 닫기 — Form 행/컨트롤은 그대로 통과,
-            // ZStack 의 빈 배경(PGradientBackground 등)에 닿은 탭만 처리.
-            // simultaneousGesture 를 사용해 Picker/Toggle/NavigationLink 동작과 충돌하지 않게 함.
-            .simultaneousGesture(
-                TapGesture().onEnded {
-                    if focusedField != nil {
-                        focusedField = nil
-                    }
-                }
-            )
             .navigationBarTitleDisplayMode(.inline)
             .toolbarBackground(.hidden, for: .navigationBar)
                 .toolbar {

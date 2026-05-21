@@ -122,6 +122,14 @@ struct AlarmSwipeActionsModifier: ViewModifier {
 
     func body(content: Content) -> some View {
         content
+            .swipeActions(edge: .trailing, allowsFullSwipe: true) {
+                Button(role: .destructive) {
+                    onDelete()
+                    HapticManager.notification(.warning)
+                } label: {
+                    Label("alarm_detail_delete_button", systemImage: "trash")
+                }
+            }
             .swipeActions(edge: .leading, allowsFullSwipe: false) {
                 if alarm.isWeeklyAlarm && alarm.isEnabled {
                     if alarm.isSkippingNext {
