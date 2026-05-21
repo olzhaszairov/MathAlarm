@@ -53,7 +53,7 @@ struct Alarm: Codable, Identifiable, Equatable, Sendable {
         minute: Int = 0,
         schedule: AlarmSchedule = .once,
         isEnabled: Bool = true,
-        soundName: String = "default",
+        soundName: String = AlarmDefaults.defaultSoundName,
         createdAt: Date = Date(),
         skippedDate: Date? = nil,
         alarmMode: AlarmMode = AlarmDefaults.defaultAlarmMode,

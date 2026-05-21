@@ -75,26 +75,14 @@ actor AudioService: AudioServiceProtocol {
         await volumeService.ensureMinimumVolume()
 
         // 사운드 파일 로드 (번들 내 파일만 사용)
+        let resolvedName = (soundName == "default") ? AlarmDefaults.defaultSoundName : soundName
         let url: URL
-        if soundName == "default" {
-            if let bundleURL = Bundle.main.url(forResource: "default_alarm", withExtension: "wav")
-                ?? Bundle.main.url(forResource: "default_alarm", withExtension: "mp3") {
-                url = bundleURL
-            } else {
-                AppLogger.error("default_alarm 사운드 파일이 번들에 없습니다", category: .alarm)
-                throw AlarmError.soundNotFound(soundName)
-            }
+        if let bundleURL = Bundle.main.url(forResource: resolvedName, withExtension: "mp3")
+            ?? Bundle.main.url(forResource: resolvedName, withExtension: "wav") {
+            url = bundleURL
         } else {
-            if let bundleURL = Bundle.main.url(forResource: soundName, withExtension: "mp3")
-                ?? Bundle.main.url(forResource: soundName, withExtension: "wav") {
-                url = bundleURL
-            } else if let fallback = Bundle.main.url(forResource: "default_alarm", withExtension: "wav")
-                        ?? Bundle.main.url(forResource: "default_alarm", withExtension: "mp3") {
-                AppLogger.warning("사운드 '\(soundName)' 없음, default_alarm으로 폴백", category: .alarm)
-                url = fallback
-            } else {
-                throw AlarmError.soundNotFound(soundName)
-            }
+            AppLogger.error("Alarm sound '\(resolvedName)' not found in bundle", category: .alarm)
+            throw AlarmError.soundNotFound(soundName)
         }
 
         let player = try AVAudioPlayer(contentsOf: url)

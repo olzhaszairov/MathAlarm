@@ -18,7 +18,7 @@ final class AlarmDetailViewModel {
     var specificDate: Date = Date()
     var alarmMode: AlarmMode = AlarmDefaults.defaultAlarmMode
     var isSilentAlarm: Bool = false
-    var soundName: String = "default"
+    var soundName: String = AlarmDefaults.defaultSoundName
 
     /// 24시간 형식의 hour (0-23). AlarmStore에 저장할 때 사용.
     var hour: Int {

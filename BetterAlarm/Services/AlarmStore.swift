@@ -71,7 +71,7 @@ actor AlarmStore {
         minute: Int,
         title: String,
         schedule: AlarmSchedule,
-        soundName: String = "default",
+        soundName: String = AlarmDefaults.defaultSoundName,
         alarmMode: AlarmMode = AlarmDefaults.defaultAlarmMode,
         isSilentAlarm: Bool = false
     ) async {

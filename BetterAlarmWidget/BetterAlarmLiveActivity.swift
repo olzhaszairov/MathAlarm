@@ -18,7 +18,7 @@ struct BetterAlarmLiveActivity: Widget {
                     HStack {
                         Image(systemName: "alarm.fill")
                             .foregroundColor(.cyan)
-                        Text("다음 알람")
+                        Text("Следующий звонок")
                             .font(.caption)
                             .foregroundColor(.secondary)
                     }
@@ -44,7 +44,7 @@ struct BetterAlarmLiveActivity: Widget {
                         }
 
                         if context.state.isSkipped {
-                            Text("이번만 건너뛰기")
+                            Text("Пропустить")
                                 .font(.caption2)
                                 .foregroundColor(.orange)
                                 .padding(.horizontal, 8)
@@ -103,7 +103,7 @@ struct LockScreenAlarmView: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack {
-                    Text("다음 알람")
+                    Text("Следующий звонок")
                         .font(.caption)
                         .foregroundColor(.secondary)
 
@@ -153,16 +153,16 @@ struct LockScreenAlarmView: View {
     BetterAlarmLiveActivity()
 } contentStates: {
     AlarmActivityAttributes.ContentState(
-        nextAlarmTime: "오전 7:30",
-        nextAlarmDate: "5월 1일",
-        alarmTitle: "기상 알람",
+        nextAlarmTime: "В 7:30",
+        nextAlarmDate: "05.01.2026",
+        alarmTitle: "Звонок на работу",
         isSkipped: false
     )
 
     AlarmActivityAttributes.ContentState(
-        nextAlarmTime: "오후 2:00",
-        nextAlarmDate: "1월 15일 (월)",
-        alarmTitle: "회의",
+        nextAlarmTime: "В 14:00",
+        nextAlarmDate: "15.01.2026 (Пн)",
+        alarmTitle: "Встреча",
         isSkipped: true
     )
 }

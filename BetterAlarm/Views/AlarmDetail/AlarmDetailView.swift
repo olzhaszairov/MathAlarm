@@ -108,7 +108,8 @@ struct AlarmDetailView: View {
                             Text("alarm_detail_section_sound")
                                 .foregroundStyle(Color.pTextPrimary)
                             Spacer()
-                            Text(viewModel.soundName == "default"
+                            Text(viewModel.soundName == AlarmDefaults.defaultSoundName
+                                 || viewModel.soundName == "default"
                                  ? String(localized: "alarm_detail_sound_default")
                                  : viewModel.soundName)
                                 .foregroundStyle(Color.pTextSecondary)

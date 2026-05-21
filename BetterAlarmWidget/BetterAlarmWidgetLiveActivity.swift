@@ -183,12 +183,12 @@ struct LockScreenView: View {
 
             VStack(alignment: .leading, spacing: 4) {
                 HStack(spacing: 6) {
-                    Text("다음 알람")
+                    Text("Следующий звонок")
                         .font(.system(size: 11, weight: .semibold))
                         .foregroundColor(theme.labelAccent)
 
                     if context.state.isSkipped {
-                        Text("건너뛰기")
+                        Text("Пропустить")
                             .font(.system(size: 10, weight: .medium))
                             .foregroundColor(.orange)
                             .padding(.horizontal, 6)
@@ -234,45 +234,45 @@ struct LockScreenView: View {
     BetterAlarmWidgetLiveActivity()
 } contentStates: {
     AlarmActivityAttributes.ContentState(
-        nextAlarmTime: "오전 7:30",
-        nextAlarmDate: "5월 1일",
-        alarmTitle: "출근 알람",
+        nextAlarmTime: "В 7:30",
+        nextAlarmDate: "05.01.2026",
+        alarmTitle: "Звонок на работу",
         isSkipped: false,
         themeName: "winter"
     )
 }
 
-#Preview("Summer", as: .content, using: AlarmActivityAttributes(alarmId: "preview")) {
+#Preview("Лето", as: .content, using: AlarmActivityAttributes(alarmId: "preview")) {
     BetterAlarmWidgetLiveActivity()
 } contentStates: {
     AlarmActivityAttributes.ContentState(
-        nextAlarmTime: "오전 7:30",
-        nextAlarmDate: "5월 1일",
-        alarmTitle: "출근 알람",
+        nextAlarmTime: "В 7:30",
+        nextAlarmDate: "05.01.2026",
+        alarmTitle: "Звонок на работу",
         isSkipped: false,
         themeName: "summer"
     )
 }
 
-#Preview("Spring", as: .content, using: AlarmActivityAttributes(alarmId: "preview")) {
+#Preview("Весна", as: .content, using: AlarmActivityAttributes(alarmId: "preview")) {
     BetterAlarmWidgetLiveActivity()
 } contentStates: {
     AlarmActivityAttributes.ContentState(
-        nextAlarmTime: "오전 8:00",
-        nextAlarmDate: "4월 28일",
-        alarmTitle: "아침 운동",
+        nextAlarmTime: "В 8:00",
+        nextAlarmDate: "28.04.2026",
+        alarmTitle: "Утренняя пробежка",
         isSkipped: false,
         themeName: "spring"
     )
 }
 
-#Preview("Autumn", as: .content, using: AlarmActivityAttributes(alarmId: "preview")) {
+#Preview("Осень", as: .content, using: AlarmActivityAttributes(alarmId: "preview")) {
     BetterAlarmWidgetLiveActivity()
 } contentStates: {
     AlarmActivityAttributes.ContentState(
-        nextAlarmTime: "오후 2:00",
-        nextAlarmDate: "1월 22일",
-        alarmTitle: "회의",
+        nextAlarmTime: "В 14:00",
+        nextAlarmDate: "22.01.2026",
+        alarmTitle: "Встреча",
         isSkipped: true,
         themeName: "autumn"
     )
