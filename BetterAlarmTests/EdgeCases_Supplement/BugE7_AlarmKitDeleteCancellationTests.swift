@@ -76,6 +76,23 @@ final class BugE7_AlarmKitDeleteCancellationTests: XCTestCase {
                        "삭제된 알람은 목록에서 제거되어야 한다")
     }
 
+    /// AlarmKit 알람 스누즈 후 삭제 시 로컬 스누즈 알림도 함께 취소되어야 한다
+    func test_deleteAlarmKit_afterSnooze_cancelsLocalNotifications() async {
+        await store.createAlarm(hour: 8, minute: 0, title: "SnoozeDelete",
+                                schedule: .once, alarmMode: .alarmKit, isSilentAlarm: false)
+        let alarm = await store.alarms[0]
+        try? await mockNotif.scheduleSnooze(for: alarm, minutes: 1)
+        mockNotif.reset()
+
+        await store.deleteAlarm(alarm)
+
+        XCTAssertEqual(
+            mockNotif.cancelAlarmCalledWith.count, 1,
+            "삭제 시 로컬 스누즈 알림이 남지 않도록 cancelAlarm이 호출되어야 한다"
+        )
+        XCTAssertGreaterThan(mockAlarmKit.stopAllAlarmsCallCount, 0)
+    }
+
     /// local 모드 알람 삭제는 AlarmKit 취소를 호출하지 않아야 한다
     func test_deleteLocalAlarm_doesNotCallAlarmKitCancel() async {
         // MARK: Given

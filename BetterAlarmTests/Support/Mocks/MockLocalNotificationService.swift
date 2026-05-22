@@ -48,6 +48,18 @@ final class MockLocalNotificationService: LocalNotificationServiceProtocol, @unc
         cancelAlarmCalledWith.append(alarm)
     }
 
+    func cancelAlarmNotifications(alarmID: UUID) async {
+        cancelAlarmCalledWith.append(
+            Alarm(
+                id: alarmID,
+                title: "",
+                hour: 0,
+                minute: 0,
+                schedule: .once
+            )
+        )
+    }
+
     func cancelAllAlarms() async {
         cancelAllCallCount += 1
     }

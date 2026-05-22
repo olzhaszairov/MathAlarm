@@ -57,6 +57,11 @@ final class MockAlarmKitService: AlarmKitServiceProtocol, @unchecked Sendable {
         stopAllAlarmsCallCount += 1
     }
 
+    func snoozeAlarm(for alarm: Alarm) async {
+        snoozeCallCount += 1
+        snoozeCalledWithID.append(alarm.id.uuidString)
+    }
+
     func snoozeAlarm(id alarmIDString: String) async {
         snoozeCallCount += 1
         snoozeCalledWithID.append(alarmIDString)

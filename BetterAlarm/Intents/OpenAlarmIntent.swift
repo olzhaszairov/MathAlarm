@@ -8,6 +8,43 @@ enum AlarmIntentBridge {
     static let activeAppAlarmIDKey = "activeAlarmKitAppAlarmID"
     /// OpenAlarmIntent → 앱 복귀 시 울림 화면 표시용.
     static let pendingOpenAlarmKey = "pendingOpenAlarmFromIntent"
+    /// SnoozeAlarmIntent / in-app snooze → AlarmKit에 등록된 1회성 스누즈 ID.
+    static let pendingSnoozeAlarmKitIDKey = "pendingSnoozeAlarmKitID"
+
+    static let snoozeFromIntentFlagKey = "alarmSnoozedFromIntent"
+    static let snoozedAppAlarmIDKey = "alarmSnoozedAlarmID"
+    static let snoozeDateTimestampKey = "alarmSnoozeDateTimestamp"
+
+    static func recordSnoozeBridge(appAlarmID: String, snoozeDate: Date, alarmKitID: UUID) {
+        let defaults = UserDefaults.standard
+        defaults.set(true, forKey: snoozeFromIntentFlagKey)
+        defaults.set(appAlarmID, forKey: snoozedAppAlarmIDKey)
+        defaults.set(snoozeDate.timeIntervalSince1970, forKey: snoozeDateTimestampKey)
+        defaults.set(alarmKitID.uuidString, forKey: pendingSnoozeAlarmKitIDKey)
+    }
+
+    static func clearSnoozeBridge() {
+        let defaults = UserDefaults.standard
+        defaults.removeObject(forKey: snoozeFromIntentFlagKey)
+        defaults.removeObject(forKey: snoozedAppAlarmIDKey)
+        defaults.removeObject(forKey: snoozeDateTimestampKey)
+        defaults.removeObject(forKey: pendingSnoozeAlarmKitIDKey)
+    }
+
+    /// 삭제·비활성화 시 해당 앱 알람과 연결된 Intent/UserDefaults 흔적을 제거한다.
+    static func clearReferences(toAppAlarmID alarmID: UUID) {
+        let idString = alarmID.uuidString
+        let defaults = UserDefaults.standard
+        if defaults.string(forKey: activeAppAlarmIDKey) == idString {
+            defaults.removeObject(forKey: activeAppAlarmIDKey)
+        }
+        if defaults.string(forKey: pendingOpenAlarmKey) == idString {
+            defaults.removeObject(forKey: pendingOpenAlarmKey)
+        }
+        if defaults.string(forKey: snoozedAppAlarmIDKey) == idString {
+            clearSnoozeBridge()
+        }
+    }
 }
 
 // MARK: - OpenAlarmIntent (iOS 26+)

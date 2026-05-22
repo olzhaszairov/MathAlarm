@@ -35,11 +35,9 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
             try? AlarmManager.shared.stop(id: id)
         }
 
-        // 5분 후 스누즈 알람을 AlarmManager.shared로 직접 등록
-        let newID = UUID()
-        let snoozeDate = Date().addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
-
         let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
+        let snoozeDate = Date().addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
+        let newID = UUID()
 
         let alert = AlarmPresentation.Alert(
             title: LocalizedStringResource("alarmkit_alert_snooze_title"),
@@ -71,11 +69,15 @@ struct SnoozeAlarmIntent: LiveActivityIntent {
         )
         _ = try? await AlarmManager.shared.schedule(id: newID, configuration: config)
 
-        // Intent는 별도 프로세스 → AlarmStore에 직접 접근 불가
-        // UserDefaults를 브릿지로 사용하여 앱 복귀 시 snoozeDate 동기화
-        UserDefaults.standard.set(true, forKey: "alarmSnoozedFromIntent")
-        UserDefaults.standard.set(alarmID, forKey: "alarmSnoozedAlarmID")
-        UserDefaults.standard.set(snoozeDate.timeIntervalSince1970, forKey: "alarmSnoozeDateTimestamp")
+        if !appAlarmID.isEmpty {
+            AlarmIntentBridge.recordSnoozeBridge(
+                appAlarmID: appAlarmID,
+                snoozeDate: snoozeDate,
+                alarmKitID: newID
+            )
+        } else {
+            UserDefaults.standard.set(newID.uuidString, forKey: AlarmIntentBridge.pendingSnoozeAlarmKitIDKey)
+        }
 
         return .result()
     }

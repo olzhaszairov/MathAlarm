@@ -15,6 +15,7 @@ protocol AlarmKitServiceProtocol: Sendable {
     func scheduleAlarm(for alarm: Alarm) async throws
     func cancelAlarm(for alarm: Alarm) async
     func stopAllAlarms() async
+    func snoozeAlarm(for alarm: Alarm) async
     func snoozeAlarm(id alarmIDString: String) async
 }
 
@@ -208,17 +209,38 @@ actor AlarmKitService: AlarmKitServiceProtocol {
 
     // MARK: - Snooze
 
-    /// 스누즈: 현재 알람 중지 후 5분 뒤 새 AlarmKit 알람 등록.
+    /// 스누즈: 현재 AlarmKit 알람 중지 후 1분 뒤 전체 화면 AlarmKit 알람 재등록.
+    func snoozeAlarm(for alarm: Alarm) async {
+        AppLogger.info("AlarmKit snooze for app alarm: '\(alarm.displayTitle)'", category: .alarmKit)
+        await stopAllAlarms()
+        await scheduleSnoozeAlarmKit(appAlarmID: alarm.id.uuidString)
+    }
+
+    /// 잠금 화면 Intent: 지정된 AlarmKit ID를 중지한 뒤 스누즈를 등록한다.
     func snoozeAlarm(id alarmIDString: String) async {
         AppLogger.info("AlarmKit snooze requested for id=\(alarmIDString)", category: .alarmKit)
         if let id = UUID(uuidString: alarmIDString) {
             try? manager.stop(id: id)
         }
+        let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
+        await scheduleSnoozeAlarmKit(appAlarmID: appAlarmID)
+    }
 
+    private func scheduleSnoozeAlarmKit(appAlarmID: String) async {
         let newID = UUID()
+        currentAlarmKitID = newID
         let snoozeDate = Date().addingTimeInterval(TimeInterval(AlarmDefaults.snoozeMinutes * 60))
 
-        let appAlarmID = UserDefaults.standard.string(forKey: AlarmIntentBridge.activeAppAlarmIDKey) ?? ""
+        if !appAlarmID.isEmpty {
+            UserDefaults.standard.set(appAlarmID, forKey: AlarmIntentBridge.activeAppAlarmIDKey)
+            AlarmIntentBridge.recordSnoozeBridge(
+                appAlarmID: appAlarmID,
+                snoozeDate: snoozeDate,
+                alarmKitID: newID
+            )
+        } else {
+            UserDefaults.standard.set(newID.uuidString, forKey: AlarmIntentBridge.pendingSnoozeAlarmKitIDKey)
+        }
 
         let alert = AlarmPresentation.Alert(
             title: LocalizedStringResource("alarmkit_alert_snooze_title"),

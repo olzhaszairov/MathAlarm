@@ -122,9 +122,10 @@ actor AlarmStore {
     }
 
     func deleteAlarm(_ alarm: Alarm) async {
+        await cancelAllPendingForAlarm(alarm)
         alarms.removeAll { $0.id == alarm.id }
         saveAlarms()
-        await cancelSchedule(for: alarm)
+        AlarmIntentBridge.clearReferences(toAppAlarmID: alarm.id)
         await scheduleNextAlarm(force: true)
         await syncLiveActivity()
         AppLogger.alarmDeleted(alarm.displayTitle)
@@ -147,7 +148,7 @@ actor AlarmStore {
             await scheduleNextAlarm(force: true)
         } else {
             await cancelSchedule(for: alarm)
-            // 비활성화 후 반복 알림 대상이 바뀔 수 있으므로 재스케줄
+            AlarmIntentBridge.clearReferences(toAppAlarmID: alarm.id)
             await scheduleNextAlarm(force: true)
         }
         await syncLiveActivity()
@@ -199,16 +200,15 @@ actor AlarmStore {
 
     func syncSnoozeFromIntent() {
         let defaults = UserDefaults.standard
-        guard defaults.bool(forKey: "alarmSnoozedFromIntent"),
-              let alarmIDString = defaults.string(forKey: "alarmSnoozedAlarmID") else { return }
+        guard defaults.bool(forKey: AlarmIntentBridge.snoozeFromIntentFlagKey),
+              let alarmIDString = defaults.string(forKey: AlarmIntentBridge.snoozedAppAlarmIDKey) else { return }
 
-        let timestamp = defaults.double(forKey: "alarmSnoozeDateTimestamp")
+        let timestamp = defaults.double(forKey: AlarmIntentBridge.snoozeDateTimestampKey)
         let snoozeDate = Date(timeIntervalSince1970: timestamp)
 
-        // UserDefaults 키 소비 (중복 동기화 방지)
-        defaults.removeObject(forKey: "alarmSnoozedFromIntent")
-        defaults.removeObject(forKey: "alarmSnoozedAlarmID")
-        defaults.removeObject(forKey: "alarmSnoozeDateTimestamp")
+        defaults.removeObject(forKey: AlarmIntentBridge.snoozeFromIntentFlagKey)
+        defaults.removeObject(forKey: AlarmIntentBridge.snoozedAppAlarmIDKey)
+        defaults.removeObject(forKey: AlarmIntentBridge.snoozeDateTimestampKey)
 
         // 알람 찾아서 snoozeDate 반영
         if let alarmID = UUID(uuidString: alarmIDString),
@@ -219,9 +219,10 @@ actor AlarmStore {
         }
     }
 
-    /// 알람을 지정된 분 뒤에 다시 울리도록 스누즈 알림을 예약한다.
+    /// 알람을 지정된 분 뒤에 다시 울리도록 스누즈한다.
+    /// - alarmKit: AlarmKit 전체 화면 알람 (로컬 푸시 사용 안 함)
+    /// - local: UNNotification 스누즈
     func snoozeAlarm(_ alarm: Alarm, minutes: Int = AlarmDefaults.snoozeMinutes) async {
-        // 스누즈 상태 저장
         if let index = alarms.firstIndex(where: { $0.id == alarm.id }) {
             var updated = alarms[index]
             updated.snoozeDate = Date().addingTimeInterval(TimeInterval(minutes * 60))
@@ -229,17 +230,25 @@ actor AlarmStore {
             saveAlarms()
         }
 
-        // 기존 반복 알림을 취소한 뒤 스누즈 예약
         await localNotificationService.cancelAlarm(for: alarm)
 
-        do {
-            try await localNotificationService.scheduleSnooze(for: alarm, minutes: minutes)
-            AppLogger.info("Snooze scheduled: \(alarm.displayTitle) in \(minutes) min", category: .alarm)
-        } catch {
-            AppLogger.error("Failed to schedule snooze: \(error)", category: .alarm)
+        switch alarm.alarmMode {
+        case .alarmKit:
+            if let service = alarmKitService {
+                await service.snoozeAlarm(for: alarm)
+                AppLogger.info("AlarmKit snooze scheduled: \(alarm.displayTitle) in \(minutes) min", category: .alarm)
+            } else {
+                AppLogger.error("AlarmKit snooze skipped — service unavailable: \(alarm.displayTitle)", category: .alarm)
+            }
+        case .local:
+            do {
+                try await localNotificationService.scheduleSnooze(for: alarm, minutes: minutes)
+                AppLogger.info("Local snooze scheduled: \(alarm.displayTitle) in \(minutes) min", category: .alarm)
+            } catch {
+                AppLogger.error("Failed to schedule local snooze: \(error)", category: .alarm)
+            }
         }
 
-        // R8-3: 스누즈는 다음 가장 가까운 알람을 변경할 수 있으므로 Live Activity 동기화
         await syncLiveActivity()
     }
 
@@ -250,7 +259,7 @@ actor AlarmStore {
 
         alarms[index].snoozeDate = nil
         saveAlarms()
-        await localNotificationService.cancelAlarm(for: alarm)
+        await cancelAllPendingForAlarm(alarm)
         await scheduleNextAlarm(force: true)
         await syncLiveActivity()
         AppLogger.info("Snooze cancelled: \(alarm.displayTitle)", category: .alarm)
@@ -414,13 +423,14 @@ actor AlarmStore {
     }
 
     private func cancelSchedule(for alarm: Alarm) async {
-        switch alarm.alarmMode {
-        case .local:
-            await localNotificationService.cancelAlarm(for: alarm)
-        case .alarmKit:
-            if let service = alarmKitService {
-                await service.cancelAlarm(for: alarm)
-            }
+        await cancelAllPendingForAlarm(alarm)
+    }
+
+    /// 메인/스누즈 로컬 알림 + AlarmKit(및 스누즈 AlarmKit)을 모두 정리한다.
+    private func cancelAllPendingForAlarm(_ alarm: Alarm) async {
+        await localNotificationService.cancelAlarm(for: alarm)
+        if alarm.alarmMode == .alarmKit, let service = alarmKitService {
+            await service.stopAllAlarms()
         }
     }
 }

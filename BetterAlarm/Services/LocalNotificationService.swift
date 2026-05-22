@@ -9,6 +9,7 @@ protocol LocalNotificationServiceProtocol: Sendable {
     func scheduleAlarm(for alarm: Alarm, withRepeatingAlerts: Bool) async throws
     func scheduleSnooze(for alarm: Alarm, minutes: Int) async throws
     func cancelAlarm(for alarm: Alarm) async
+    func cancelAlarmNotifications(alarmID: UUID) async
     func cancelAllAlarms() async
     func scheduleBackgroundReminder(for alarm: Alarm) async
     func scheduleTerminationWarning(for alarm: Alarm) async
@@ -195,13 +196,17 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
 
     // MARK: - Cancel
 
-    /// 특정 알람의 모든 알림(메인 + 반복)을 취소한다.
+    /// 특정 알람의 모든 알림(메인 + 반복 + 스누즈)을 취소한다.
     /// `alarm.<alarmId>.<index>` prefix 매칭으로 일괄 취소하여 인덱스 누락이 없도록 한다.
     func cancelAlarm(for alarm: Alarm) async {
-        let prefix = notificationIdentifierPrefix(for: alarm)
+        await cancelAlarmNotifications(alarmID: alarm.id)
+    }
+
+    func cancelAlarmNotifications(alarmID: UUID) async {
+        let prefix = "\(Self.alarmIdentifierPrefix)\(alarmID.uuidString)."
 
         // 1) 인덱스 기반 식별자 명시 취소 (현재 스킴: 0...alarmRepeatCount-1)
-        let indexedIdentifiers = (0..<alarmRepeatCount).map { notificationIdentifier(for: alarm, index: $0) }
+        let indexedIdentifiers = (0..<alarmRepeatCount).map { "\(prefix)\($0)" }
         notificationCenter.removePendingNotificationRequests(withIdentifiers: indexedIdentifiers)
         notificationCenter.removeDeliveredNotifications(withIdentifiers: indexedIdentifiers)
 
@@ -218,12 +223,12 @@ actor LocalNotificationService: LocalNotificationServiceProtocol {
         }
 
         // 3) 레거시 호환: 이전 스킴에서 메인 알림이 alarm.id.uuidString을 그대로 사용 / 반복은 "<id>-repeat-<n>" 사용
-        let legacyMain = alarm.id.uuidString
-        let legacyRepeat = (1...30).map { "\(alarm.id.uuidString)-repeat-\($0)" }
+        let legacyMain = alarmID.uuidString
+        let legacyRepeat = (1...30).map { "\(alarmID.uuidString)-repeat-\($0)" }
         notificationCenter.removePendingNotificationRequests(withIdentifiers: [legacyMain] + legacyRepeat)
         notificationCenter.removeDeliveredNotifications(withIdentifiers: [legacyMain] + legacyRepeat)
 
-        AppLogger.debug("Notification cancelled: '\(alarm.displayTitle)' id=\(alarm.id.uuidString)", category: .alarm)
+        AppLogger.debug("Notification cancelled for alarm id=\(alarmID.uuidString)", category: .alarm)
     }
 
     /// 모든 알람 알림을 취소한다.

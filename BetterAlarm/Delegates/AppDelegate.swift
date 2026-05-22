@@ -196,29 +196,32 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
            let alarmID = UUID(uuidString: alarmIDString) {
             if let store = alarmStore {
                 let alarms = await store.alarms
-                if let alarm = alarms.first(where: { $0.id == alarmID }) {
-                    AppLogger.info("Foreground notification → ringing screen: \(alarm.displayTitle)", category: .alarm)
-
-                    // 즉시 오디오 재생 (UI 렌더링 대기 없이 소리부터)
-                    if let audioService {
-                        await audioService.stopSilentLoop()
-                        let isPlaying = await audioService.isAlarmPlaying
-                        if !isPlaying {
-                            try? await audioService.playAlarmSound(
-                                soundName: alarm.soundName,
-                                isSilent: alarm.isSilentAlarm,
-                                loop: true
-                            )
-                        }
-                    }
-
-                    NotificationCenter.default.post(
-                        name: .alarmShouldRing,
-                        object: nil,
-                        userInfo: ["alarmID": alarmIDString]
-                    )
+                guard let alarm = alarms.first(where: { $0.id == alarmID }) else {
+                    AppLogger.warning("Foreground notification for missing/deleted alarm: \(alarmIDString)", category: .alarm)
+                    await localNotificationService?.cancelAlarmNotifications(alarmID: alarmID)
                     return []
                 }
+
+                AppLogger.info("Foreground notification → ringing screen: \(alarm.displayTitle)", category: .alarm)
+
+                if let audioService {
+                    await audioService.stopSilentLoop()
+                    let isPlaying = await audioService.isAlarmPlaying
+                    if !isPlaying {
+                        try? await audioService.playAlarmSound(
+                            soundName: alarm.soundName,
+                            isSilent: alarm.isSilentAlarm,
+                            loop: true
+                        )
+                    }
+                }
+
+                NotificationCenter.default.post(
+                    name: .alarmShouldRing,
+                    object: nil,
+                    userInfo: ["alarmID": alarmIDString]
+                )
+                return []
             }
         }
         AppLogger.debug("Foreground notification presented as banner (non-alarm or unknown)", category: .alarm)
@@ -249,6 +252,7 @@ extension AppDelegate: UNUserNotificationCenterDelegate {
         let alarms = await store.alarms
         guard let alarm = alarms.first(where: { $0.id == alarmID }) else {
             AppLogger.warning("Tapped notification but alarm not found: \(alarmIDString)", category: .navigation)
+            await localNotificationService?.cancelAlarmNotifications(alarmID: alarmID)
             return
         }
 
