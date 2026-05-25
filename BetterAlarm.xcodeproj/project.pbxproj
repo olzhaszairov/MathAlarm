@@ -386,7 +386,7 @@
 				DEVELOPMENT_TEAM = 257795Q3T5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetterAlarm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = turgyzar;
+				INFOPLIST_KEY_CFBundleDisplayName = BestMathAlarm;
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
@@ -422,7 +422,7 @@
 				DEVELOPMENT_TEAM = 257795Q3T5;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = BetterAlarm/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = turgyzar;
+				INFOPLIST_KEY_CFBundleDisplayName = BestMathAlarm;
 				INFOPLIST_KEY_NSSupportsLiveActivities = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
